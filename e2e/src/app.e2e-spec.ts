@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-modal-gallery-2018.github.io App', () => {
+describe('angular-modal-gallery-2018-v6.github.io App', () => {
   let page: AppPage;
 
   beforeEach(() => {

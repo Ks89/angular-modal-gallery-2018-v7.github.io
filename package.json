@@ -1,13 +1,13 @@
 {
   "name": "angular-modal-gallery-official-website",
-  "version": "6.0.0",
+  "version": "6.0.0-beta.1",
   "author": "Stefano Cappa",
   "description": "based on https://github.com/Ks89/angular-cli-skeleton",
   "license": "MIT",
   "main": "src/main.ts",
   "homepage": "https://github.com/Ks89",
   "private": true,
-  "repository": "https://github.com/Ks89/angular-modal-gallery-2018.github.io",
+  "repository": "https://github.com/Ks89/angular-modal-gallery-2018-v6.github.io",
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
@@ -23,7 +23,7 @@
     "build:dev:stats": "npm run build:dev -- --stats-json",
     "build:prod": "ng build --prod --aot --build-optimizer=true --stats-json",
     "build:prod:stats": "npm run build:prod -- --stats-json",
-    "build:release": "ng build --prod --aot --configuration=release --build-optimizer=true --base-href /angular-modal-gallery-2018.github.io/ --deploy-url /angular-modal-gallery-2018.github.io/",
+    "build:release": "ng build --prod --aot --configuration=release --build-optimizer=true --base-href /angular-modal-gallery-2018-v6.github.io/ --deploy-url /angular-modal-gallery-2018-v6.github.io/",
     "build:verbose": "npm run build:dev -- --verbose",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server",
