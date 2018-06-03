@@ -90,6 +90,17 @@
     &#125;;
       </pre>
 
+      <p>Also, you have to change the way you import <code>ModalGalleryModule</code> with forRoot from:</p>
+      <pre>
+        ModalGalleryModule.forRoot()
+      </pre>
+      <p>to:</p>
+      <pre>
+        ModalGalleryModule.forRoot(&#123; shortcuts: ['ctrl+s', 'meta+s'], disableSsrWorkaround: true &#125;)
+      </pre>
+
+      <p>All SystemJS users must use <code>disableSsrWorkaround: true</code> to prevent errors at runtime.</p>
+
       <h4>Addition info</h4>
       <p>If you are using <code>ModalGalleryModule.forRoot()</code> inside a child module, you should use simply <code>ModalGalleryModule</code> (without forRoot()).
         In fact, forRoot() should be used only for root modules. But, <b>if your module is lazy loaded, forRoot() is still mandatory.</b>
