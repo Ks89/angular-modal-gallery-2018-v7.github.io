@@ -27,7 +27,7 @@ import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
-import { Image, GalleryService } from '@ks89/angular-modal-gallery';
+import { Action, GalleryService, Image, ImageModalEvent } from '@ks89/angular-modal-gallery';
 
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
@@ -45,6 +45,8 @@ export class GalleryServiceComponent {
 
   codeHtml: string;
   codeTypescript: string;
+  codeHtml2: string;
+  codeTypescript2: string;
 
   constructor(private titleService: TitleService, private galleryService: GalleryService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
 
@@ -58,15 +60,34 @@ export class GalleryServiceComponent {
       `<button class="btn btn-primary" (click)="openModalViaService(1, 2)"><i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Open galleryId=1 at index=2</button>
 <ks-modal-gallery [id]="1" [modalImages]="images"></ks-modal-gallery>`;
 
+    this.codeHtml2 =
+      `<ks-modal-gallery [id]="2" [modalImages]="images" (show)="onShowAutoCloseExample($event, 2)"></ks-modal-gallery>`;
+
     this.codeTypescript =
       `openModalViaService(id: number | undefined, index: number) {
   console.log('opening gallery with index ' + index);
   this.galleryService.openGallery(id, index);
+}`;
+    this.codeTypescript2 =
+      `onShowAutoCloseExample(event: ImageModalEvent, galleryId: number) {
+  setTimeout(() => {
+    this.galleryService.closeGallery(galleryId);
+  }, 3000);
 }`;
   }
 
   openModalViaService(id: number | undefined, index: number) {
     console.log('opening gallery with index ' + index);
     this.galleryService.openGallery(id, index);
+  }
+
+  onShowAutoCloseExample(event: ImageModalEvent, galleryId: number) {
+    console.log(`onShowAutoCloseExample with id=${galleryId} action: ` + Action[event.action]);
+    console.log('onShowAutoCloseExample result:' + event.result);
+    console.log('Starting timeout of 3 second to close modal gallery automatically');
+    setTimeout(() => {
+      console.log('setTimeout end - closing gallery with id=' + galleryId);
+      this.galleryService.closeGallery(galleryId);
+    }, 3000);
   }
 }

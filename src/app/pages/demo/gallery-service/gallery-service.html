@@ -1,19 +1,20 @@
 <div class="container">
 
   <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery"><u class="text-success"><h1 class="text-success">Gallery service example</h1></u></a>
-  <p>Minimal example of Gallery service.</p>
+  <p>Minimal example of Gallery service with <code>openGallery</code> and <code>closeGallery</code> methods.</p>
   <br>
 
-  <h2>Live Demo</h2>
+  <h2>Live Demos</h2>
   <br>
-  <button class="btn btn-primary" (click)="openModalViaService(1, 2)"><i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Open galleryId=1 at index=2</button>
+  <br>
+  <h4>1) Example of <code>openGallery</code> method</h4>
+  <br>
+  <button class="btn btn-primary" (click)="openModalViaService(1, 2)"><i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Open galleryId=1 at index=2 (third image)</button>
   <br><br>
   <ks-modal-gallery [id]="1" [modalImages]="images"></ks-modal-gallery>
   <br><br>
 
   <section>
-    <h2>Code</h2>
-    <br>
     <h5>Template</h5>
     <codemirror [(ngModel)]="codeHtml" [config]="configHtml">
     </codemirror>
@@ -24,6 +25,25 @@
   </section>
 
   <br><br>
+
+  <h4>2) Example of <code>closeGallery</code> method</h4>
+  <p>Modal gallery (with id=2) <b>will close automatically after 3 seconds.</b></p>
+  <br>
+  <ks-modal-gallery [id]="2" [modalImages]="images" (show)="onShowAutoCloseExample($event, 2)"></ks-modal-gallery>
+  <br><br>
+
+  <section>
+    <h5>Template</h5>
+    <codemirror [(ngModel)]="codeHtml2" [config]="configHtml">
+    </codemirror>
+    <br>
+    <h5>Typescript</h5>
+    <codemirror [(ngModel)]="codeTypescript2" [config]="configTs">
+    </codemirror>
+  </section>
+
+  <br><br>
+
 
   <section>
     <h2>Details</h2>

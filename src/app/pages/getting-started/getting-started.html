@@ -61,7 +61,8 @@
 
       <h3>Official examples</h3>
       <ul>
-        <li><a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/angular-cli">angular-cli (recommended)</a></li>
+        <li><a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/angular-cli">angular-cli [latest version] (recommended)</a></li>
+        <li><a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/angular-cli-5">angular-cli 5 [legacy support]</a></li>
         <li><a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/angular-cli-material">angular-cli with material</a></li>
         <li><a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/systemjs">SystemJs</a></li>
         <li><a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/universal">angular-universal</a></li>
@@ -76,17 +77,21 @@
         map: &#123;
           'hammerjs'                  : 'node_modules/hammerjs',
           'mousetrap'                 : 'node_modules/mousetrap'
-          ''@ks89'                    : 'node_modules/@ks89',
+          '@ks89'                    : 'node_modules/@ks89',
         &#125;
 
         packages = &#123;
           'hammerjs'                    : &#123; main: 'hammer.js' &#125;,
           'mousetrap'                   : &#123; main: 'mousetrap.js' &#125;,
           '@ks89/angular-modal-gallery' : &#123; main: 'bundles/ks89-angular-modal-gallery.umd.min.js', defaultExtension: 'js' &#125;
-
-          'angular-modal-gallery'     : &#123; main: 'angular-modal-gallery.umd.js' &#125;
         &#125;
       </pre>
+      <br>
+      <p><b>All SystemJS users must import <code>ModalGalleryModule</code> in this way:</b></p>
+      <pre>
+        ModalGalleryModule.forRoot(&#123; shortcuts: ['ctrl+s', 'meta+s'], disableSsrWorkaround: true &#125;)
+      </pre>
+      <p><b><code>disableSsrWorkaround: true</code> will prevent errors at runtime with SystemJS.</b></p>
       <p>For more information, you should check the <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/systemjs">official SystemJS example</a>.</p>
 
       <br>
