@@ -4,6 +4,12 @@
   <p>Modal gallery example with <b class="text-success">downloadable images</b> and <b class="text-success">download button</b>.</p>
   <br>
 
+  <p><b>Attention: for security reasons Google Chrome and other browsers decided to block cross-origin downloads.</b>
+    So to use the download feature of this example, your images must be in the same server of your Angular application,
+    otherwise the browser will navigate to the image itself, without to download it automatically.
+    For more information check: <a href="https://developers.google.com/web/updates/2018/02/chrome-65-deprecations#block_cross-origin_wzxhzdk5a_download">HERE</a></p>
+  <br>
+
   <h2>Live Demo</h2>
   <br>
   <ks-modal-gallery [id]="0" [modalImages]="images"
