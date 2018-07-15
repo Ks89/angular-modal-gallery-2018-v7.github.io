@@ -29,6 +29,8 @@ import { PlainGalleryAtagsComponent } from './plain-gallery-atags/plain-gallery-
 import { PlainGalleryImagePointerComponent } from './plain-gallery-image-pointer/plain-gallery-image-pointer.component';
 import { PlainGalleryCustomWithDescComponent } from './plain-gallery-custom-with-desc/plain-gallery-custom-with-desc.component';
 import { GalleryServiceComponent } from './gallery-service/gallery-service.component';
+import { Base64Component } from './base64/base64.component';
+import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
 
 export const routes: Routes = [
   {
@@ -48,6 +50,7 @@ export const routes: Routes = [
       {path: 'close-outside', component: CloseOusideComponent},
       {path: 'download-simple', component: DownloadSimpleComponent},
       {path: 'download-advanced', component: DownloadAdvancedComponent},
+      {path: 'download-custom-filename', component: DownloadCustomFilenameComponent},
 
       {path: 'infinite-sliding', component: InfiniteSlidingComponent},
 
@@ -74,7 +77,9 @@ export const routes: Routes = [
 
       {path: 'accessibility', component: AccessibilityComponent},
 
-      {path: 'gallery-service', component: GalleryServiceComponent}
+      {path: 'gallery-service', component: GalleryServiceComponent},
+
+      {path: 'base64', component: Base64Component}
     ]
   }
 ];

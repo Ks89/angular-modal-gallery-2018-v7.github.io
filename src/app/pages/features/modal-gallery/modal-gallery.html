@@ -340,10 +340,10 @@
         <td><small><code>img</code></small></td>
         <td>
           <div>
-            <i>Type: </i><code>string</code>
+            <i>Type: </i><code>string | SafeResourceUrl</code>
           </div>
           <div>
-            <p>Mandatory source path of the modal image.</p>
+            <p>Mandatory source path of the modal image. To support base64 images, check the official example.</p>
           </div>
         </td>
       </tr>
@@ -405,6 +405,18 @@
           <div>
             <p>Optional aria label text. It sets 'aria-label' html's attribute, useful for accessibility purposes.
               To ignore this feature, don't add this property.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><small><code>downloadFileName</code></small></td>
+        <td>
+          <div>
+            <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+          </div>
+          <div>
+            <p>Optional file name used to download an image. It must be a non-empty string.
+              This feature is useful, for instance, when you want to download images provided as base64.</p>
           </div>
         </td>
       </tr>

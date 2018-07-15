@@ -28,6 +28,9 @@ import { PlainGalleryLayoutsComponent } from './plain-gallery-layouts/plain-gall
 import { PlainGalleryAtagsComponent } from './plain-gallery-atags/plain-gallery-atags.component';
 import { GalleryServiceComponent } from './gallery-service/gallery-service.component';
 
+import { Base64Component } from './base64/base64.component';
+import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
+
 export const FEATURES_COMPONENTS = [
   DemoComponent,
   ArraySimpleComponent,
@@ -58,5 +61,7 @@ export const FEATURES_COMPONENTS = [
   PlainGalleryImagePointerComponent,
   PlainGalleryLayoutsComponent,
   PlainGalleryAtagsComponent,
-  GalleryServiceComponent
+  GalleryServiceComponent,
+  Base64Component,
+  DownloadCustomFilenameComponent
 ];
