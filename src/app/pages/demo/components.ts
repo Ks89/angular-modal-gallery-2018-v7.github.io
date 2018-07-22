@@ -29,7 +29,8 @@ import { PlainGalleryAtagsComponent } from './plain-gallery-atags/plain-gallery-
 import { GalleryServiceComponent } from './gallery-service/gallery-service.component';
 
 import { Base64Component } from './base64/base64.component';
-import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
+import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
+import { InvertSwipeComponent } from './invert-swipe/invert-swipe.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -63,5 +64,6 @@ export const FEATURES_COMPONENTS = [
   PlainGalleryAtagsComponent,
   GalleryServiceComponent,
   Base64Component,
-  DownloadCustomFilenameComponent
+  DownloadCustomFilenameComponent,
+  InvertSwipeComponent
 ];

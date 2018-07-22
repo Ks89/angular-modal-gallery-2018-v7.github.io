@@ -409,14 +409,13 @@
         </td>
       </tr>
       <tr>
-        <td><small><code>downloadFileName</code></small></td>
+        <td><small><code>invertSwipe</code></small></td>
         <td>
           <div>
-            <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            <i>Type: </i><code>boolean</code><span class="badge badge-pill badge-secondary float-right">optional</span>
           </div>
           <div>
-            <p>Optional file name used to download an image. It must be a non-empty string.
-              This feature is useful, for instance, when you want to download images provided as base64.</p>
+            <p>Optional boolean property to invert the default swipe direction on devices with touchscreen.</p>
           </div>
         </td>
       </tr>
@@ -519,6 +518,17 @@
             </p>
             <p>Attention please! There aren't spaces between values. So if you want a 'text - text' you have to specify exactly ' - ', with the two spaces</p>
             <p>Also, from version 5.4.0, you can use this interface to change description's style.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><small><code>navigateOnClick</code></small></td>
+        <td>
+          <div>
+            <i>Type: </i><code>boolean</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+          </div>
+          <div>
+            <p>If false, click events on the current image will be ignored, otherwise will navigate to the next image.</p>
           </div>
         </td>
       </tr>

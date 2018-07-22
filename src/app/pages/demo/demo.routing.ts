@@ -31,6 +31,7 @@ import { PlainGalleryCustomWithDescComponent } from './plain-gallery-custom-with
 import { GalleryServiceComponent } from './gallery-service/gallery-service.component';
 import { Base64Component } from './base64/base64.component';
 import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
+import { InvertSwipeComponent } from './invert-swipe/invert-swipe.component';
 
 export const routes: Routes = [
   {
@@ -79,7 +80,9 @@ export const routes: Routes = [
 
       {path: 'gallery-service', component: GalleryServiceComponent},
 
-      {path: 'base64', component: Base64Component}
+      {path: 'base64', component: Base64Component},
+
+      {path: 'invert-swipe', component: InvertSwipeComponent}
     ]
   }
 ];
