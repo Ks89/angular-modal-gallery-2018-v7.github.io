@@ -7,7 +7,7 @@
   "main": "src/main.ts",
   "homepage": "https://github.com/Ks89",
   "private": true,
-  "repository": "https://github.com/Ks89/angular-modal-gallery-2018-v6.github.io",
+  "repository": "https://github.com/Ks89/angular-modal-gallery-2018-v7.github.io",
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
@@ -22,7 +22,7 @@
     "build:dev:stats": "npm run build:dev -- --stats-json",
     "build:prod": "ng build --prod --aot --stats-json",
     "build:prod:stats": "npm run build:prod -- --stats-json",
-    "build:release": "ng build --prod --aot --configuration=release --base-href /angular-modal-gallery-2018-v6.github.io/ --deploy-url /angular-modal-gallery-2018-v6.github.io/",
+    "build:release": "ng build --prod --aot --configuration=release --base-href /angular-modal-gallery-2018-v7.github.io/ --deploy-url /angular-modal-gallery-2018-v7.github.io/",
     "build:verbose": "npm run build:dev -- --verbose",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server",
