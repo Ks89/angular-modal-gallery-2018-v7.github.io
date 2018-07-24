@@ -89,7 +89,6 @@
     "ngx-page-scroll": "^5.0.0",
     "popper.js": "^1.12.6",
     "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
