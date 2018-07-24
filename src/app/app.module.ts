@@ -27,15 +27,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-// import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // import { environment } from '../environments/environment';
-
-// import codemirror's modes
-import 'codemirror/mode/htmlmixed/htmlmixed';
-import 'codemirror/mode/javascript/javascript';
 
 // ********************** angular-modal-gallery *****************************
 import { ModalGalleryModule } from '@ks89/angular-modal-gallery'; // <----------------- angular-modal-gallery library import
@@ -46,8 +42,9 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { COMPONENTS } from './pages/components';
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
-import { CodemirrorModule } from 'ng2-codemirror';
+import { CodemirrorModule } from '@ks89/ngx-codemirror';
 import { NgxPageScrollModule, PageScrollConfig } from 'ngx-page-scroll';
 
 @NgModule({
@@ -61,9 +58,7 @@ import { NgxPageScrollModule, PageScrollConfig } from 'ngx-page-scroll';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    // ServiceWorkerModule.register('/ngsw-worker.js', {
-    //   enabled: environment.production
-    // }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
 
     NgbModule.forRoot(), // forRoot ensures the providers are only created once
 
@@ -78,7 +73,7 @@ import { NgxPageScrollModule, PageScrollConfig } from 'ngx-page-scroll';
     COMPONENTS
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 

@@ -36,7 +36,9 @@ import { TitleService } from '../../../core/services/title.service';
 })
 export class InputDefaultValuesComponent {
 
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - Default input values');
 
     // scroll to the top of the document

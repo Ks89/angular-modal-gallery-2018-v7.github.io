@@ -100,7 +100,8 @@ export class Base64Component {
 
   constructor(private sanitizer: DomSanitizer,
               private titleService: TitleService,
-              private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
 
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#demo');

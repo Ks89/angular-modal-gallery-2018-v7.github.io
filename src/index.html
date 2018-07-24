@@ -2,46 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>angular-modal-gallery-docs</title>
+  <title>AngularModalGalleryDocs</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!--<link rel="manifest" href="/angular-modal-gallery-2018-v6.github.io/manifest.json" />-->
-
-  <!-- Workaround to host a SPA on Github Pages. Taken from
-            http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
-  <!-- ---------------------------------------------- -->
-  <!-- Mandatory to release this app on Github pages without issues -->
-  <script>
-    (function(){
-      const redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect !== location.href) {
-        history.replaceState(null, null, redirect);
-      }
-    })();
-  </script>
-  <!-- ---------------------------------------------- -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#101010">
 </head>
 <body>
-  <app-root>
-    <img style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto;" src="/angular-modal-gallery-2018-v6.github.io/assets/ring.svg"/>
-  </app-root>
-
-  <!--<script>-->
-    <!--window.dataLayer = window.dataLayer || [];-->
-    <!--function gtag(){dataLayer.push(arguments);}-->
-    <!--gtag('js', new Date());-->
-
-    <!--gtag('config', 'UA-114974088-1');-->
-    <!--// <- don't use this line (last one)-->
-  <!--</script>-->
-  <!--&lt;!&ndash; Global site tag (gtag.js) - Google Analytics &ndash;&gt;-->
-  <!--<script async src="https://www.google-analytics.com/analytics.js"></script>-->
-  <!-- import font-awesome for older browsers with a blocking request -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css" integrity="sha384-Rw5qeepMFvJVEZdSo1nDQD5B6wX0m7c5Z/pLNvjkB14W6Yki1hKbSEQaX9ffUbWe" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
+  <app-root></app-root>
+  <noscript>
+    <p>This website requires javascript! Please enable it or try with another browser.</p>
+  </noscript>
 </body>
 </html>

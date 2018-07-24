@@ -47,7 +47,9 @@ export class LoadingSpinnerTypeComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Examples - Loading spinner types');
 
     // scroll to the top of the document

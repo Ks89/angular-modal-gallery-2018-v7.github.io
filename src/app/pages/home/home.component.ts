@@ -22,13 +22,14 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
+import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 import { Image } from '@ks89/angular-modal-gallery';
 
+import { UiService } from '../../core/services/ui.service';
 import { environment } from '../../../environments/environment';
-import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
-import { DOCUMENT } from '@angular/common';
 
 const PATH = environment.imgPath;
 
@@ -36,7 +37,7 @@ const PATH = environment.imgPath;
   selector: 'app-home-page',
   templateUrl: 'home.html'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   images: Image[] = [
     new Image(0, {
@@ -73,10 +74,24 @@ export class HomeComponent {
     })
   ];
 
-  constructor(private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private uiService: UiService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#home');
     this.scrollService.start(pageScrollInstance);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData({
+      title: 'Homepage',
+      description: 'Check angular-modal-gallery and build your awesome modal image galleries',
+      image: '/assets/icon_site.png'
+    });
   }
 
 }

@@ -35,7 +35,9 @@ import { TitleService } from '../../../core/services/title.service';
   styleUrls: ['previews.scss']
 })
 export class PreviewsComponent {
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - Previews');
 
     // scroll to the top of the document

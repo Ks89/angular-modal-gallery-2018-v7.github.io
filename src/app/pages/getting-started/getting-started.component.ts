@@ -33,7 +33,9 @@ import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 })
 export class GettingStartedComponent {
 
-  constructor(private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(
+    private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#gettingStarted');
     this.scrollService.start(pageScrollInstance);

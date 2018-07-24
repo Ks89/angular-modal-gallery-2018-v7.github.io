@@ -33,7 +33,9 @@ import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 })
 export class MigrationComponent {
 
-  constructor(private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(
+    private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#migration');
     this.scrollService.start(pageScrollInstance);

@@ -23,9 +23,23 @@
  */
 
 import { Component } from '@angular/core';
+import { UiService } from './core/services/ui.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'app';
+
+  constructor(private ui: UiService) {
+  }
+
+  // check this in twitter card validator
+  metaData() {
+    this.ui.setMetaData({
+      title: 'homepage',
+      description: 'Check my website'
+    });
+  }
+}

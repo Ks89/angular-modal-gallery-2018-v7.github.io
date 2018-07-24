@@ -35,9 +35,11 @@ import { TitleService } from '../../core/services/title.service';
 })
 export class FeaturesComponent {
 
-  title: string = 'Features - Modal Gallery';
+  title = 'Features - Modal Gallery';
 
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.subscribe((val: string) => {
       this.onUpdateTitle(val);
     });

@@ -48,7 +48,10 @@ export class GalleryServiceComponent {
   codeHtml2: string;
   codeTypescript2: string;
 
-  constructor(private titleService: TitleService, private galleryService: GalleryService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private galleryService: GalleryService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
 
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#demo');

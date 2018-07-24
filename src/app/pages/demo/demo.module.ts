@@ -4,16 +4,14 @@ import { FormsModule } from '@angular/forms'; // to support ngModel
 import { routing } from './demo.routing';
 
 import { FEATURES_COMPONENTS } from './components';
-// ********************** angular-modal-gallery *****************************
-import 'hammerjs'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save hammerjs @types/hammerjs`)
-import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save mousetrap @types/mousetrap`)
-import { ModalGalleryModule } from '@ks89/angular-modal-gallery';
-import 'codemirror';
-import { CodemirrorModule } from 'ng2-codemirror';
-
 import { SharedModule } from '../../shared/shared.module';
 
+import { CodemirrorModule } from '@ks89/ngx-codemirror';
+
+// ********************** angular-modal-gallery *****************************
+import { ModalGalleryModule } from '@ks89/angular-modal-gallery';
 // **************************************************************************
+
 
 @NgModule({
   imports: [

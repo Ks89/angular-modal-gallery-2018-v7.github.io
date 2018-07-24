@@ -78,7 +78,9 @@ export class AccessibilityComponent {
     previewScrollNextTitle: 'CUSTOM Scroll next previews'
   };
 
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
 
     this.titleService.titleEvent.emit('Examples - Custom accessibility');
 

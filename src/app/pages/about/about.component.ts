@@ -22,21 +22,37 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
+
+import { UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-about-page',
   templateUrl: 'about.html'
 })
 
-export class AboutComponent {
+export class AboutComponent implements OnInit {
 
-  constructor(private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private uiService: UiService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#about');
     this.scrollService.start(pageScrollInstance);
+  }
+
+  ngOnInit() {
+
+  }
+
+  metaData() {
+    this.uiService.setMetaData({
+      title: 'About',
+      description: 'A special thanks to all contributors, testers and everyone helped me in those years',
+      image: '/assets/icon_site.png'
+    });
   }
 }

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-modal-gallery-2018-v6.github.io App', () => {
+describe('workspace-project App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('angular-modal-gallery-2018-v6.github.io App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(true).toBe(true);
+    expect(page.getParagraphText()).toEqual('Welcome to angular-modal-gallery-docs!');
   });
 });

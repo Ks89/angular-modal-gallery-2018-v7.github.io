@@ -41,7 +41,9 @@ export class OverviewComponent {
   modalGalleryPath: string = PATH + '/assets/modalgallery.svg';
   plainGalleryPath: string = PATH + '/assets/plaingallery.svg';
 
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - Overview');
 
     // scroll to the top of the document

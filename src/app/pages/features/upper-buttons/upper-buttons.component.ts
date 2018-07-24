@@ -35,7 +35,9 @@ import { TitleService } from '../../../core/services/title.service';
   styleUrls: ['upper-buttons.scss']
 })
 export class UpperButtonsComponent {
-  constructor(private titleService: TitleService, private scrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - UpperButtons');
 
     // scroll to the top of the document
