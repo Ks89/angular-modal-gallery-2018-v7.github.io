@@ -31,10 +31,10 @@
       have multiple <code>&lt;ks-modal-gallery&gt;</code> occurrences in a single template, you have to increase the id to prevent issues.</p>
 
       <p>Finally, search for all <code>[downloadable]</code>, <code>[loadingConfig]</code> and <code>[description]</code> texts inside your templates, because
-      you have to remove these inputs and place them inside a new one called <code>[currentInputConfig]</code> in this way:</p>
+      you have to remove these inputs and place them inside a new one called <code>[currentImageConfig]</code> in this way:</p>
 
       <pre>
-    [currentInputConfig]="&#123;
+    [currentImageConfig]="&#123;
       downloadable: PUT HERE YOUR OLDER BOOLEAN VALUE OF DOWNLOADABLE,
       loadingConfig: &#123; PUT HERE YOUR OLDER LOADINGCONFIG OBJECT'S PROPERTIES &#125;,
       description: &#123; PUT HERE YOUR OLDER DESCRIPTION OBJECT'S PROPERTIES &#125;
@@ -42,7 +42,7 @@
       </pre>
 
       <p>Obviously, if you hadn't use one or all of those properties, simply ignore them. In fact, they are all optional, like in version 5.0.0.
-      The only difference is that all inputs are moved inside a wrapper object called <code>currentInputConfig</code>.</p>
+      The only difference is that all inputs are moved inside a wrapper object called <code>currentImageConfig</code>.</p>
 
       <br>
       <h3>(optional) Step 3 - restore older description bottom margin</h3>
