@@ -47,12 +47,18 @@ img {
   font-size: 1rem;
 }
 
-.btn {
-  color: $color-white !important;
-  border-color: $color-white !important;
-}
+.btn-custom {
+  cursor: pointer;
+  color: $color-white;
+  border: 1px solid $color-white;
+  padding: .375rem .75rem;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: .25rem;
 
-.btn:hover {
-  background: $color-white;
-  color: $color-primary !important;
+  &:hover {
+    background: $color-white;
+    color: $color-primary !important;
+    text-decoration: none;
+  }
 }
