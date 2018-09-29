@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,19 +32,21 @@ import { Image } from '@ks89/angular-modal-gallery';
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-no-dots-and-previews-page',
   templateUrl: 'no-dots-and-previews.html'
 })
-export class NoDotsAndPreviewsComponent {
+export class NoDotsAndPreviewsComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
 
   codeHtml: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -58,5 +60,15 @@ export class NoDotsAndPreviewsComponent {
       `<ks-modal-gallery [id]="0" [modalImages]="images"
     [previewConfig]="{visible: false}"
     [dotsConfig]="{visible: false}"></ks-modal-gallery>`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo no dots and previews'
+    });
   }
 }

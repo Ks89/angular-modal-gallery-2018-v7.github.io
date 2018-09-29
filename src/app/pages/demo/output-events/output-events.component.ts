@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,13 +32,14 @@ import { Action, ButtonEvent, Image, ImageModalEvent } from '@ks89/angular-modal
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-output-events-page',
   templateUrl: 'output-events.html',
   styleUrls: ['output-events.scss']
 })
-export class OutputEventsComponent {
+export class OutputEventsComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   imageLoaded: ImageModalEvent;
@@ -55,7 +56,8 @@ export class OutputEventsComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -115,5 +117,15 @@ export class OutputEventsComponent {
   onButtonAfterHook(event: ButtonEvent) {
     console.log('(buttonAfterHook)=onButtonAfterHook: ', event);
     this.buttonAfterHook = event;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo outputs'
+    });
   }
 }

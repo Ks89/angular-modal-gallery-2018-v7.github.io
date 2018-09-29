@@ -28,7 +28,7 @@ import { DOCUMENT } from '@angular/common';
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 import { Image } from '@ks89/angular-modal-gallery';
 
-import { UiService } from '../../core/services/ui.service';
+import { Metadata, UiService } from '../../core/services/ui.service';
 import { environment } from '../../../environments/environment';
 
 const PATH = environment.imgPath;
@@ -87,11 +87,8 @@ export class HomeComponent implements OnInit {
   }
 
   metaData() {
-    this.uiService.setMetaData({
-      title: 'Homepage',
-      description: 'Check angular-modal-gallery and build your awesome modal image galleries',
-      image: '/assets/favicon.png'
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Home'
     });
   }
-
 }

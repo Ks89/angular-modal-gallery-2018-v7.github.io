@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { Image } from '@ks89/angular-modal-gallery';
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-add-image-array-page',
   templateUrl: 'add-image-array.html'
 })
-export class AddImageArrayComponent {
+export class AddImageArrayComponent implements OnInit {
 
   images: Image[] = [...IMAGES_ARRAY];
 
@@ -47,7 +48,8 @@ export class AddImageArrayComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -78,5 +80,15 @@ export class AddImageArrayComponent {
     const imageToCopy: Image = this.images[Math.floor(Math.random() * this.images.length)];
     const newImage: Image = new Image(this.images.length - 1 + 1, imageToCopy.modal, imageToCopy.plain);
     this.images = [...this.images, newImage];
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo add image'
+    });
   }
 }

@@ -1,4 +1,4 @@
-/*
+ /*
  * MIT License
  *
  * Copyright (c) 2017-2018 Stefano Cappa
@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -31,13 +31,15 @@ import { Image } from '@ks89/angular-modal-gallery';
 
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
+import { Metadata, UiService } from '../../../core/services/ui.service';
+
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
 
 @Component({
   selector: 'app-invert-swipe-page',
   templateUrl: 'invert-swipe.html'
 })
-export class InvertSwipeComponent {
+export class InvertSwipeComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -46,7 +48,8 @@ export class InvertSwipeComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -58,5 +61,15 @@ export class InvertSwipeComponent {
 
     this.codeHtml =
       `<ks-modal-gallery [id]="0" [modalImages]="{invertSwipe: true}"></ks-modal-gallery>`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo invert swipe'
+    });
   }
 }

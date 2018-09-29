@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { Action, ButtonEvent, ButtonsConfig, ButtonsStrategy, ButtonType, Image,
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-buttons-strategies-page',
   templateUrl: 'buttons-strategies.html'
 })
-export class ButtonsStrategiesComponent {
+export class ButtonsStrategiesComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -63,7 +64,8 @@ export class ButtonsStrategiesComponent {
     strategy: ButtonsStrategy.FULL
   };
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -183,5 +185,15 @@ export class ButtonsStrategiesComponent {
   onVisibleIndex(event: ImageModalEvent) {
     console.log('onVisibleIndex action: ' + Action[event.action]);
     console.log('onVisibleIndex result:' + event.result);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo buttons strategies'
+    });
   }
 }

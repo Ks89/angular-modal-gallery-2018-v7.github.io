@@ -22,13 +22,14 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
 import { TitleService } from '../../../core/services/title.service';
 import { environment } from '../../../../environments/environment';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 const PATH = environment.imgPath;
 
@@ -37,12 +38,13 @@ const PATH = environment.imgPath;
   templateUrl: 'overview.html',
   styleUrls: ['overview.scss']
 })
-export class OverviewComponent {
+export class OverviewComponent implements OnInit {
   modalGalleryPath: string = PATH + '/assets/modalgallery.svg';
   plainGalleryPath: string = PATH + '/assets/plaingallery.svg';
   carouselPath: string = PATH + '/assets/carousel.svg';
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - Overview');
@@ -50,5 +52,15 @@ export class OverviewComponent {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#features');
     this.scrollService.start(pageScrollInstance);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Overview'
+    });
   }
 }

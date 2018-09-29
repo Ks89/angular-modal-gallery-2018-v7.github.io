@@ -25,7 +25,7 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-not-found-page',
-  template: '<h3>Error 404: Page not found. Click here to go back to the <a href="https://ks89.github.io/angular-modal-gallery-2018-v6.github.io/">main page</a></h3>'
+  template: '<h3>Error 404: Page not found</h3>'
 })
 
 export class NotFoundComponent { }

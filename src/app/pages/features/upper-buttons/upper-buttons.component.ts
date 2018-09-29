@@ -22,20 +22,22 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
 import { TitleService } from '../../../core/services/title.service';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-upper-buttons-page',
   templateUrl: 'upper-buttons.html',
   styleUrls: ['upper-buttons.scss']
 })
-export class UpperButtonsComponent {
-  constructor(private titleService: TitleService,
+export class UpperButtonsComponent implements OnInit {
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - UpperButtons');
@@ -43,5 +45,15 @@ export class UpperButtonsComponent {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#features');
     this.scrollService.start(pageScrollInstance);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Upper buttons'
+    });
   }
 }

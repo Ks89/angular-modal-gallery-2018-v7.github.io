@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,13 +32,14 @@ import { Description, DescriptionStrategy, Image } from '@ks89/angular-modal-gal
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-description-custom-page',
   templateUrl: 'description-custom.html',
   styleUrls: ['description-custom.scss']
 })
-export class DescriptionCustomComponent {
+export class DescriptionCustomComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   customDescription: Description = {
@@ -54,7 +55,8 @@ export class DescriptionCustomComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -77,5 +79,15 @@ export class DescriptionCustomComponent {
     numberSeparator: ' of ',
     beforeTextDescription: ' => '
   };`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo description custom'
+    });
   }
 }

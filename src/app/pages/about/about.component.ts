@@ -27,7 +27,7 @@ import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
-import { UiService } from '../../core/services/ui.service';
+import { Metadata, UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-about-page',
@@ -45,14 +45,12 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.metaData();
   }
 
   metaData() {
-    this.uiService.setMetaData({
-      title: 'About',
-      description: 'A special thanks to all contributors, testers and everyone helped me in those years',
-      image: '/assets/favicon.png'
+    this.uiService.setMetaData(<Metadata>{
+      title: 'About'
     });
   }
 }

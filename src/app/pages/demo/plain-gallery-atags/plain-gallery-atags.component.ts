@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { Image, LineLayout, PlainGalleryConfig, PlainGalleryStrategy } from '@ks
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-plain-gallery-atags-page',
   templateUrl: 'plain-gallery-atags.html'
 })
-export class PlainGalleryAtagsComponent {
+export class PlainGalleryAtagsComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -52,7 +53,8 @@ export class PlainGalleryAtagsComponent {
     advanced: {aTags: true, additionalBackground: '50% 50%/cover'}
   };
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -72,5 +74,15 @@ export class PlainGalleryAtagsComponent {
     layout: new LineLayout({ width: '50px', height: '50px' }, { length: 4, wrap: true }, 'flex-start'),
     advanced: { aTags: true, additionalBackground: '50% 50%/cover' }
   };`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo plain atags'
+    });
   }
 }

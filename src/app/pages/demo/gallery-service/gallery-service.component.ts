@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { Action, GalleryService, Image, ImageModalEvent } from '@ks89/angular-mo
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-gallery-service-page',
   templateUrl: 'gallery-service.html'
 })
-export class GalleryServiceComponent {
+export class GalleryServiceComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -48,7 +49,8 @@ export class GalleryServiceComponent {
   codeHtml2: string;
   codeTypescript2: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private galleryService: GalleryService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
@@ -92,5 +94,15 @@ export class GalleryServiceComponent {
       console.log('setTimeout end - closing gallery with id=' + galleryId);
       this.galleryService.closeGallery(galleryId);
     }, 3000);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo gallery service'
+    });
   }
 }

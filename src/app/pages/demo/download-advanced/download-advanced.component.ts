@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { ButtonsConfig, ButtonsStrategy, Image } from '@ks89/angular-modal-galle
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-download-advanced-page',
   templateUrl: 'download-advanced.html'
 })
-export class DownloadAdvancedComponent {
+export class DownloadAdvancedComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   buttonsConfigSimple: ButtonsConfig = {
@@ -51,7 +52,8 @@ export class DownloadAdvancedComponent {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -73,5 +75,15 @@ export class DownloadAdvancedComponent {
     visible: true,
     strategy: ButtonsStrategy.SIMPLE
   };`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo download advanced'
+    });
   }
 }

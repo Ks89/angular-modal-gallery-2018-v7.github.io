@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { GridLayout, Image, LineLayout, PlainGalleryConfig, PlainGalleryStrategy
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-plain-gallery-layouts-page',
   templateUrl: 'plain-gallery-layouts.html'
 })
-export class PlainGalleryLayoutsComponent {
+export class PlainGalleryLayoutsComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -63,7 +64,8 @@ export class PlainGalleryLayoutsComponent {
     layout: new GridLayout({ width: '80px', height: '80px' }, { length: 3, wrap: true })
   };
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -114,5 +116,15 @@ export class PlainGalleryLayoutsComponent {
     strategy: PlainGalleryStrategy.GRID,
     layout: new GridLayout({ width: '80px', height: '80px' }, { length: 3, wrap: true })
   };`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo plain layouts'
+    });
   }
 }

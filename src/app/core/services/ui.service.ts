@@ -25,6 +25,13 @@
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
+export interface Metadata {
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,18 +39,21 @@ export class UiService {
 
   private appColor = '#252525';
   private appImage = '/assets/favicon.png';
-  private appTitle = 'ks89-amg';
-  private appDescription = 'Angular library to create image galleries';
+  private appTitle = '@ks89/amg';
+  private appDescription = 'Check angular-modal-gallery and build your awesome image galleries';
 
   constructor(private meta: Meta, private title: Title) {
   }
 
-  public setMetaData(config) {
+  public setMetaData(config: Metadata) {
     const description = config.description || this.appDescription;
     const image = config.image || this.appImage;
     const title = config.title
-      ? `${config.title} - ${this.appTitle}`
+      ? `${this.appTitle} ${config.title}`
       : this.appTitle;
+    const url = config.url || 'https://www.stefanocappa.it/amg/v7';
+    const twitterProfile = '@ksks89';
+    const mainWebsite = 'www.stefanocappa.it';
 
     this.title.setTitle(title);
 
@@ -51,16 +61,25 @@ export class UiService {
       {name: 'description', content: description},
       {name: 'theme-color', content: this.appColor},
       {name: 'twitter:card', content: 'summary'},
-      {name: 'twitter:image', content: image},
+      {name: 'twitter:site', content: twitterProfile},
+      {name: 'twitter:creator', content: twitterProfile},
+      {name: 'twitter:url', content: url},
       {name: 'twitter:title', content: title},
       {name: 'twitter:description', content: description},
+      {name: 'twitter:image', content: image},
       {name: 'apple-mobile-web-app-capable', content: 'yes'},
       {name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent'},
       {name: 'apple-mobile-web-app-title', content: title},
       {name: 'apple-touch-startup-image', content: image},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:url', content: url},
       {property: 'og:title', content: title},
+      {property: 'og:image', content: image},
       {property: 'og:description', content: description},
-      {property: 'og:image', content: image}
+      {property: 'og:site_name', content: mainWebsite},
+      {property: 'og:locale', content: 'en_US'},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'}
     ];
 
     tags.forEach(tag => this.meta.updateTag(tag));

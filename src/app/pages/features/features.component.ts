@@ -22,22 +22,24 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
 import { TitleService } from '../../core/services/title.service';
+import { Metadata, UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-features-page',
   templateUrl: 'features.html'
 })
-export class FeaturesComponent {
+export class FeaturesComponent implements OnInit {
 
   title = 'Features - Modal Gallery';
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.subscribe((val: string) => {
@@ -53,4 +55,13 @@ export class FeaturesComponent {
     this.title = event;
   }
 
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Features'
+    });
+  }
 }

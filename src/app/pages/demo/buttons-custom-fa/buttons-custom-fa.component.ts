@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
@@ -32,12 +32,13 @@ import { ButtonEvent, ButtonsConfig, ButtonsStrategy, ButtonType, Image } from '
 import { IMAGES_ARRAY } from '../images';
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-buttons-custom-fa-page',
   templateUrl: 'buttons-custom-fa.html'
 })
-export class ButtonsCustomFaComponent {
+export class ButtonsCustomFaComponent implements OnInit {
   images: Image[] = [...IMAGES_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -81,7 +82,8 @@ export class ButtonsCustomFaComponent {
     ]
   };
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
 
@@ -177,5 +179,15 @@ export class ButtonsCustomFaComponent {
       return;
     }
     // Invoked after both a click on a button and its related action.
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo buttons custom fa'
+    });
   }
 }

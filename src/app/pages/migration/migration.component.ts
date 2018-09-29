@@ -22,22 +22,34 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
+
+import { Metadata, UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-migration-page',
   templateUrl: 'migration.html'
 })
-export class MigrationComponent {
+export class MigrationComponent implements OnInit {
 
-  constructor(
+  constructor(private uiService: UiService,
     private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#migration');
     this.scrollService.start(pageScrollInstance);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Migration'
+    });
   }
 }

@@ -22,21 +22,23 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
 import { TitleService } from '../../../core/services/title.service';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-carousel-page',
   templateUrl: 'carousel.html',
   styleUrls: ['carousel.scss']
 })
-export class CarouselComponent {
+export class CarouselComponent implements OnInit {
 
-  constructor(private titleService: TitleService,
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
     this.titleService.titleEvent.emit('Features - Carousel');
@@ -44,5 +46,15 @@ export class CarouselComponent {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#features');
     this.scrollService.start(pageScrollInstance);
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Carousel'
+    });
   }
 }

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -32,12 +32,13 @@ import { Image } from '@ks89/angular-modal-gallery';
 
 import { TitleService } from '../../../core/services/title.service';
 import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
 
 @Component({
   selector: 'app-base64-page',
   templateUrl: 'base64.html'
 })
-export class Base64Component {
+export class Base64Component implements OnInit {
 
   // example of a png converted into base64 using https://www.base64-image.de/ or other similar websites
   base64String =
@@ -98,7 +99,8 @@ export class Base64Component {
   codeHtml: string;
   codeTypescript: string;
 
-  constructor(private sanitizer: DomSanitizer,
+  constructor(private uiService: UiService,
+              private sanitizer: DomSanitizer,
               private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
@@ -170,5 +172,15 @@ export class Base64Component {
 
     this.codeHtml =
       `<ks-modal-gallery [id]="0" [modalImages]="images"></ks-modal-gallery>`;
+  }
+
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Demo base64'
+    });
   }
 }
