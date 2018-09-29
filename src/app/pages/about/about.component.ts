@@ -22,8 +22,12 @@
  * SOFTWARE.
  */
 
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
+
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
@@ -34,11 +38,18 @@ import { Metadata, UiService } from '../../core/services/ui.service';
   templateUrl: 'about.html'
 })
 
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
+  private analytics: Subscription;
 
-  constructor(private uiService: UiService,
+  constructor(private router: Router,
+              private uiService: UiService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
+    this.analytics = this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        (<any>window).ga('set', 'page', event.urlAfterRedirects);
+        (<any>window).ga('send', 'pageview');
+      });
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#about');
     this.scrollService.start(pageScrollInstance);
@@ -52,5 +63,11 @@ export class AboutComponent implements OnInit {
     this.uiService.setMetaData(<Metadata>{
       title: 'About'
     });
+  }
+
+  ngOnDestroy() {
+    if (this.analytics) {
+      this.analytics.unsubscribe();
+    }
   }
 }

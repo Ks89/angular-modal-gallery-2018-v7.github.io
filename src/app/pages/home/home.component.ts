@@ -22,14 +22,18 @@
  * SOFTWARE.
  */
 
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 import { Image } from '@ks89/angular-modal-gallery';
 
 import { Metadata, UiService } from '../../core/services/ui.service';
 import { environment } from '../../../environments/environment';
+import { NavigationEnd, Router } from '@angular/router';
 
 const PATH = environment.imgPath;
 
@@ -37,7 +41,7 @@ const PATH = environment.imgPath;
   selector: 'app-home-page',
   templateUrl: 'home.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   images: Image[] = [
     new Image(0, {
@@ -74,9 +78,17 @@ export class HomeComponent implements OnInit {
     })
   ];
 
-  constructor(private uiService: UiService,
+  private analytics: Subscription;
+
+  constructor(private router: Router,
+              private uiService: UiService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
+    this.analytics = this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        (<any>window).ga('set', 'page', event.urlAfterRedirects);
+        (<any>window).ga('send', 'pageview');
+      });
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#home');
     this.scrollService.start(pageScrollInstance);
@@ -90,5 +102,11 @@ export class HomeComponent implements OnInit {
     this.uiService.setMetaData(<Metadata>{
       title: 'Home'
     });
+  }
+
+  ngOnDestroy() {
+    if (this.analytics) {
+      this.analytics.unsubscribe();
+    }
   }
 }
