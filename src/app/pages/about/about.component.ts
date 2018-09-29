@@ -52,7 +52,7 @@ export class AboutComponent implements OnInit {
     this.uiService.setMetaData({
       title: 'About',
       description: 'A special thanks to all contributors, testers and everyone helped me in those years',
-      image: '/assets/icon_site.png'
+      image: '/assets/favicon.png'
     });
   }
 }

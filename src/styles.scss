@@ -42,6 +42,10 @@ html {
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 // force codemirror's height https://codemirror.net/demo/resize.html
 .CodeMirror {
   border: 1px solid #eee;
@@ -56,12 +60,16 @@ html {
 
   h1 {
     color: $color-white;
-    font-family: $roboto-thin;
+    font-weight: 400;
   }
 }
 
-.text-success {
+.link-title {
   color: $color-primary !important;
+
+  &:hover {
+    color: $color-primary !important;
+  }
 }
 
 td {

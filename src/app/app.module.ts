@@ -34,7 +34,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { environment } from '../environments/environment';
 
 // ********************** angular-modal-gallery *****************************
-import { ModalGalleryModule } from '@ks89/angular-modal-gallery'; // <----------------- angular-modal-gallery library import
+import { GalleryModule } from '@ks89/angular-modal-gallery'; // <----------------- angular-modal-gallery library import
 // **************************************************************************
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,7 +64,7 @@ import { NgxPageScrollModule, PageScrollConfig } from 'ngx-page-scroll';
 
     CodemirrorModule,
     NgxPageScrollModule,
-    ModalGalleryModule.forRoot(),
+    GalleryModule.forRoot(),
     CoreModule,
     SharedModule
   ],

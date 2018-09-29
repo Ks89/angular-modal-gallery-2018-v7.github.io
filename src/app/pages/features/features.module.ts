@@ -7,7 +7,7 @@ import { FEATURES_COMPONENTS } from './components';
 import { SharedModule } from '../../shared/shared.module';
 
 // ********************** angular-modal-gallery *****************************
-import { ModalGalleryModule } from '@ks89/angular-modal-gallery';
+import { GalleryModule } from '@ks89/angular-modal-gallery';
 // **************************************************************************
 
 import { NgxPageScrollModule, PageScrollConfig } from 'ngx-page-scroll';
@@ -18,7 +18,7 @@ import { NgxPageScrollModule, PageScrollConfig } from 'ngx-page-scroll';
     routing,
     SharedModule,
     NgxPageScrollModule,
-    ModalGalleryModule // no for root here
+    GalleryModule // no for root here
   ],
   declarations: [
     FEATURES_COMPONENTS

@@ -35,5 +35,5 @@ const PATH = environment.imgPath;
 })
 export class IntroHeaderComponent {
 
-  path: string = PATH + '/assets/icon_site.png';
+  path: string = PATH + '/assets/favicon.png';
 }

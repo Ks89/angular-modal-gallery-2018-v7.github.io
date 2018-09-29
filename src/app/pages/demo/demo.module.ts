@@ -9,7 +9,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { CodemirrorModule } from '@ks89/ngx-codemirror';
 
 // ********************** angular-modal-gallery *****************************
-import { ModalGalleryModule } from '@ks89/angular-modal-gallery';
+import { GalleryModule } from '@ks89/angular-modal-gallery';
 // **************************************************************************
 
 
@@ -20,7 +20,7 @@ import { ModalGalleryModule } from '@ks89/angular-modal-gallery';
     SharedModule,
     FormsModule,
     CodemirrorModule,
-    ModalGalleryModule // no for root here
+    GalleryModule // no for root here
   ],
   declarations: [
     FEATURES_COMPONENTS

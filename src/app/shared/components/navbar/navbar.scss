@@ -25,7 +25,7 @@
 @import "theme";
 
 a {
-  font-family: $roboto-light;
+  font-weight: 400;
 }
 
 .bg-dark {
@@ -36,4 +36,12 @@ a {
   #githubButtons {
     display: none;
   }
+}
+
+.navbar-brand {
+  font-size: 16px;
+}
+
+.nav-link {
+  font-size: 14px;
 }

@@ -30,10 +30,10 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class UiService {
 
-  private appColor = '#101010';
-  private appImage = '/assets/icon_site.png';
+  private appColor = '#252525';
+  private appImage = '/assets/favicon.png';
   private appTitle = 'ks89-amg';
-  private appDescription = 'Angular library to create modal image galleries';
+  private appDescription = 'Angular library to create image galleries';
 
   constructor(private meta: Meta, private title: Title) {
   }

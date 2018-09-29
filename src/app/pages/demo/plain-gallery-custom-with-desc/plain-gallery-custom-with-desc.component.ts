@@ -124,7 +124,7 @@ export class PlainGalleryCustomWithDescComponent {
   }
 
   .description {
-    font-weight: bold;
+    font-weight: 400;
     text-align: center;
   }
 

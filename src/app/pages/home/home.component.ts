@@ -90,7 +90,7 @@ export class HomeComponent implements OnInit {
     this.uiService.setMetaData({
       title: 'Homepage',
       description: 'Check angular-modal-gallery and build your awesome modal image galleries',
-      image: '/assets/icon_site.png'
+      image: '/assets/favicon.png'
     });
   }
 

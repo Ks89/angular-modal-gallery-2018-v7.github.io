@@ -32,28 +32,28 @@
       <pre>
         import 'hammerjs';
         import 'mousetrap';
-        import &#123; ModalGalleryModule &#125; from '@ks89/angular-modal-gallery';
+        import &#123; GalleryModule &#125; from '@ks89/angular-modal-gallery';
       </pre>
       <p>The only remaining part is to list the imported module in your root module and any additional application modules that make use of the components in this library.
-        The exact method will be slightly different for the root (top-level) module for which you should end up with the code similar to (notice <code>ModalGalleryModule.forRoot()</code>):</p>
+        The exact method will be slightly different for the root (top-level) module for which you should end up with the code similar to (notice <code>GalleryModule.forRoot()</code>):</p>
       <pre>
         import 'hammerjs';
         import 'mousetrap';
-        import &#123;ModalGalleryModule&#125; from '@ks89/angular-modal-gallery';
+        import &#123;GalleryModule&#125; from '@ks89/angular-modal-gallery';
         @NgModule(&#123;
-          imports: [ModalGalleryModule.forRoot(), ...],
+          imports: [GalleryModule.forRoot(), ...],
           declarations: [ AppComponent, ... ],
           providers: [ ... ],
           bootstrap: [ AppComponent ]
         &#125;)
         export class AppModule &#123;&#125;
       </pre>
-      <p>Other modules in your application should simply import <code>ModalGalleryModule</code> (without <code>.forRoot()</code>):</p>
+      <p>Other modules in your application should simply import <code>GalleryModule</code> (without <code>.forRoot()</code>):</p>
       <pre>
-        import &#123;ModalGalleryModule&#125; from '@ks89/angular-modal-gallery';
+        import &#123;GalleryModule&#125; from '@ks89/angular-modal-gallery';
 
         @NgModule(&#123;
-          imports: [ModalGalleryModule, ...],
+          imports: [GalleryModule, ...],
           declarations: [ AnotherComponent, ... ]
         &#125;)
         export class OtherModule &#123;&#125;
@@ -87,9 +87,9 @@
         &#125;
       </pre>
       <br>
-      <p><b>All SystemJS users must import <code>ModalGalleryModule</code> in this way:</b></p>
+      <p><b>All SystemJS users must import <code>GalleryModule</code> in this way:</b></p>
       <pre>
-        ModalGalleryModule.forRoot(&#123; shortcuts: ['ctrl+s', 'meta+s'], disableSsrWorkaround: true &#125;)
+        GalleryModule.forRoot(&#123; shortcuts: ['ctrl+s', 'meta+s'], disableSsrWorkaround: true &#125;)
       </pre>
       <p><b><code>disableSsrWorkaround:true</code> will prevent errors at runtime with SystemJS.</b></p>
       <p>For more information, you should check the <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/examples/systemjs">official SystemJS example</a>.</p>

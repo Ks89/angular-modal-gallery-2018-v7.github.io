@@ -1,12 +1,14 @@
 <div class="container">
 
-  <a id="GlobalConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery"><u class="text-success"><h1 class="text-success">Global configuration</h1></u></a>
+  <h1 id="GlobalConfig" class="link clickable">
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">Global configuration</a>
+  </h1>
   <p>If you want to customize a particular behaviour of this library for the entire application (GLOBAL CONFIGURATION), you can pass an object to the <code>forRoot()</code> method in your root module.</p>
   <p>Attention: you can only add a behaviour to this library across your entire application.</p>
   <br>
 
   <section>
-    <h3>How to use it?</h3>
+    <h2>How to use it?</h2>
     <p>Into your root module, pass an object of type <a
       pageScroll href="#KeyboardServiceConfig">KeyboardServiceConfig</a> to the <code>forRoot()</code> method.</p>
     <p>For example, to download images also with ctrl+a use this:</p>
@@ -16,7 +18,7 @@
     declarations: [AppComponent],
     imports: [
       BrowserModule,
-      ModalGalleryModule.forRoot( <b>&#123; shortcuts: ['ctrl+a', 'ctrl+s', 'meta+s'] &#125;</b> )
+      GalleryModule.forRoot( <b>&#123; shortcuts: ['ctrl+a', 'ctrl+s', 'meta+s'] &#125;</b> )
     ],
     bootstrap: [AppComponent],
   &#125;)
@@ -26,7 +28,9 @@
 
   <br>
 
-  <a id="KeyboardServiceConfig" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery"><u class="text-success"><h1 class="text-success">KeyboardServiceConfig</h1></u></a>
+  <h2 id="KeyboardServiceConfig" class="link clickable">
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">KeyboardServiceConfig</a>
+  </h2>
   <p>Interface to change global download shortcuts.</p>
   <br>
   <table class="table table-hover table-sm">

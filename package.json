@@ -73,7 +73,7 @@
     "@angular/pwa": "^0.7.3",
     "@angular/router": "^6.1.2",
     "@angular/service-worker": "^6.1.2",
-    "@ks89/angular-modal-gallery": "^6.2.0",
+    "@ks89/angular-modal-gallery": "^7.0.0-alpha.1",
     "@ks89/ngx-codemirror": "^2.0.1",
     "@ng-bootstrap/ng-bootstrap": "^3.0.0",
     "@nguniversal/express-engine": "^6.0.0",

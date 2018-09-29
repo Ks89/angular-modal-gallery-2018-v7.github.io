@@ -28,11 +28,13 @@
               ]
             },
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets",
+              "src/browserconfig.xml",
               "src/manifest.json",
               "src/robots.txt",
-              "src/404.html"
+              "src/404.html",
+              "src/500.html"
             ],
             "styles": [
               "src/styles.scss",
@@ -134,11 +136,13 @@
               "node_modules/codemirror/lib/codemirror.js"
             ],
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets",
+              "src/browserconfig.xml",
               "src/manifest.json",
               "src/robots.txt",
-              "src/404.html"
+              "src/404.html",
+              "src/500.html"
             ]
           }
         },

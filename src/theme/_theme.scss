@@ -36,19 +36,3 @@ $font-big: 18px;
 $font-middle: 14px;
 $font-small: 12px;
 $font-very-small: 10px;
-
-// Roboto fonts from assets folder
-@font-face {
-  font-family: Roboto-Light;
-  src: url("/assets/fonts/Roboto-Light.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: Roboto-Thin;
-  src: url("/assets/fonts/Roboto-Thin.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-$roboto-light: "Roboto-Light", serif;
-$roboto-thin: "Roboto-Thin", serif;

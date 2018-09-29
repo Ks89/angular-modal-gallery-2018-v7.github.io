@@ -5,8 +5,10 @@
     "installMode": "prefetch",
     "resources": {
       "files": [
-        "/favicon.ico",
+        "/favicon.png",
         "/index.html",
+        "/404.html",
+        "/500.html",
         "/*.css",
         "/*.js"
       ]
@@ -38,14 +40,14 @@
     "updateMode": "prefetch",
     "resources": {
       "urls": [
-        "https://mywebsite.deployed.com/images/**"
+        "https://www.stefanocappa.it/amg7/images/**"
       ]
     }
   }],
   "dataGroups": [{
     "name": "rest-api",
     "urls": [
-      "https://mywebsite.deployed.com/api/**"
+      "https://www.stefanocappa.it/amg7/api/**"
     ],
     "cacheConfig": {
       "strategy": "freshness",

@@ -1,8 +1,8 @@
 {
-  "name": "Angular-modal-gallery-docs",
+  "name": "ks89 angular-modal-gallery",
   "short_name": "ks89-amg",
-  "theme_color": "#101010",
-  "background_color": "#9e9e9e",
+  "theme_color": "#252525",
+  "background_color": "#252525",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

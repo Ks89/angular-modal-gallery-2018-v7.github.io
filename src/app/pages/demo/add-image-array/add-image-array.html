@@ -1,26 +1,26 @@
 <div class="container">
 
-  <a href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">
-    <u class="text-success"><h1 class="text-success">Add image to array</h1></u>
-  </a>
+  <h2 id="Image" class="link clickable">
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">Add image to array</a>
+  </h2>
   <p>Modal gallery example with a <b class="text-success">button to add new images.</b></p>
   <br>
 
-  <h2>Live Demo <button class="btn btn-danger btn-sm" (click)="addRandomImage()">
+  <h3>Live Demo <button class="btn btn-danger btn-sm" (click)="addRandomImage()">
     <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add image</button>
-  </h2>
+  </h3>
   <br>
   <ks-modal-gallery [id]="0" [modalImages]="images"></ks-modal-gallery>
   <br><br>
 
   <section>
-    <h2>Code</h2>
+    <h3>Code</h3>
     <br>
-    <h5>Template</h5>
+    <h4>Template</h4>
     <codemirror [(ngModel)]="codeHtml" [config]="configHtml">
     </codemirror>
     <br>
-    <h5>Typescript</h5>
+    <h4>Typescript</h4>
     <codemirror [(ngModel)]="codeTypescript" [config]="configTs">
     </codemirror>
   </section>
@@ -28,7 +28,7 @@
   <br><br>
 
   <section>
-    <h2>Details</h2>
+    <h3>Details</h3>
     <br>
     <table class="table table-hover table-sm">
       <thead>
