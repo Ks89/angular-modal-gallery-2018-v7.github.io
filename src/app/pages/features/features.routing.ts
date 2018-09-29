@@ -8,6 +8,7 @@ import { PlainGalleryComponent } from './plain-gallery/plain-gallery.component';
 import { PreviewsComponent } from './previews/previews.component';
 import { UpperButtonsComponent } from './upper-buttons/upper-buttons.component';
 import { OverviewComponent } from './overview/overview.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 export const routes: Routes = [
   { path: '',
@@ -16,6 +17,7 @@ export const routes: Routes = [
       { path: '',                       component: OverviewComponent },
       { path: 'modal-gallery',           component: ModalGalleryComponent },
       { path: 'plain-gallery',           component: PlainGalleryComponent },
+      { path: 'carousel',                component: CarouselComponent },
       { path: 'previews',               component: PreviewsComponent },
       { path: 'upper-buttons',          component: UpperButtonsComponent },
       { path: 'global-config',           component: GlobalConfigComponent },

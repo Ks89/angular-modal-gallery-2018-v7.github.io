@@ -1,10 +1,21 @@
 <div class="container d-flex flex-column">
 
   <h2>Overview</h2>
-  <p>angular-modal-gallery is composed mainly in two parts: <strong>Plain gallery</strong> and <strong>Modal gallery</strong>.</p>
+  <p>angular-modal-gallery is composed mainly in three parts: <strong>Carousel</strong>, <strong>Plain gallery</strong> and <strong>Modal gallery</strong>.</p>
   <p><strong style="color: red;">Attention, because plain gallery is build using information passed to modal gallery,
     because they are strictly connected. So, I'm not providing a <code>&lt;ks-plain-gallery&gt;</code> component,
     because already contained in <code>&lt;ks-modal-gallery&gt;</code>.</strong></p>
+  <p>Instead, carousel is available via <code>&lt;ks-carousel&gt;</code> component.</p>
+  <br>
+
+  <h3>Carousel</h3>
+  <div class="d-flex flex-row justify-content-center">
+    <img [src]="carouselPath">
+  </div>
+  <br>
+  <p>It contains a list of scrollable images (full width or fixed width) also with previews. By default images scroll automatically.
+    Users can configure this component with many parameters, also they can project HTML content into the current carousel image.</p>
+  <p>For more info check <a [routerLink]="['/features/carousel']">Carousel's documentation</a></p>
   <br>
 
   <h3>Plain gallery</h3>

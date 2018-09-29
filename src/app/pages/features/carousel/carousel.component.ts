@@ -28,24 +28,18 @@ import { DOCUMENT } from '@angular/common';
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
 import { TitleService } from '../../../core/services/title.service';
-import { environment } from '../../../../environments/environment';
-
-const PATH = environment.imgPath;
 
 @Component({
-  selector: 'app-overview-page',
-  templateUrl: 'overview.html',
-  styleUrls: ['overview.scss']
+  selector: 'app-carousel-page',
+  templateUrl: 'carousel.html',
+  styleUrls: ['carousel.scss']
 })
-export class OverviewComponent {
-  modalGalleryPath: string = PATH + '/assets/modalgallery.svg';
-  plainGalleryPath: string = PATH + '/assets/plaingallery.svg';
-  carouselPath: string = PATH + '/assets/carousel.svg';
+export class CarouselComponent {
 
   constructor(private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
-    this.titleService.titleEvent.emit('Features - Overview');
+    this.titleService.titleEvent.emit('Features - Carousel');
 
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#features');
