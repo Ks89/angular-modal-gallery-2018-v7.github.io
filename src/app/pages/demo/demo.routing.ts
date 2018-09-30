@@ -32,6 +32,8 @@ import { GalleryServiceComponent } from './gallery-service/gallery-service.compo
 import { Base64Component } from './base64/base64.component';
 import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
 import { InvertSwipeComponent } from './invert-swipe/invert-swipe.component';
+import { CarouselMinimalComponent } from './carousel-minimal/carousel-minimal.component';
+import { CarouselFixedComponent } from './carousel-fixed/carousel-fixed.component';
 
 export const routes: Routes = [
   {
@@ -77,12 +79,12 @@ export const routes: Routes = [
       {path: 'plain-custom-desc', component: PlainGalleryCustomWithDescComponent},
 
       {path: 'accessibility', component: AccessibilityComponent},
-
       {path: 'gallery-service', component: GalleryServiceComponent},
-
       {path: 'base64', component: Base64Component},
+      {path: 'invert-swipe', component: InvertSwipeComponent},
 
-      {path: 'invert-swipe', component: InvertSwipeComponent}
+      {path: 'carousel', component: CarouselMinimalComponent},
+      {path: 'carousel-fixed', component: CarouselFixedComponent}
     ]
   }
 ];

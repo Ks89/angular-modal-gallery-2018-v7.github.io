@@ -22,34 +22,57 @@
  * SOFTWARE.
  */
 
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
 
-import { TitleService } from '../../core/services/title.service';
+import { IMAGES_RECT_ARRAY } from '../images';
+import { TitleService } from '../../../core/services/title.service';
+import { codemirrorHtml, codemirrorTs } from '../../codemirror.config';
+import { Metadata, UiService } from '../../../core/services/ui.service';
+import { Image } from '@ks89/angular-modal-gallery';
 
 @Component({
-  selector: 'app-features-page',
-  templateUrl: 'features.html'
+  selector: 'app-fixed-width-page',
+  templateUrl: 'carousel-fixed.html'
 })
-export class FeaturesComponent {
+export class CarouselFixedComponent implements OnInit {
+  images: Image[] = [...IMAGES_RECT_ARRAY];
 
-  title = 'Features - Modal Gallery';
+  configHtml: any = codemirrorHtml;
+  configTs: any = codemirrorTs;
 
-  constructor(private titleService: TitleService,
+  codeHtml: string;
+  codeTypescript: string;
+
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
-    this.titleService.titleEvent.subscribe((val: string) => {
-      this.onUpdateTitle(val);
-    });
 
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#demo');
     this.scrollService.start(pageScrollInstance);
+
+    this.titleService.titleEvent.emit('Examples - Carousel width fixed width');
+
+    this.codeHtml =
+      `  <ks-carousel [id]="101" [images]="images"
+  [carouselConfig]="{maxWidth: '766px'}"
+  [previewConfig]="{number: 5, size: {width: 'auto', height: '100px'}}"></ks-carousel>`;
+
+    this.codeTypescript =
+      `  images: Image[]; // init this value with your images`;
   }
 
-  onUpdateTitle(event: string) {
-    this.title = event;
+  ngOnInit() {
+    this.metaData();
+  }
+
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Carousel fixed width'
+    });
   }
 }

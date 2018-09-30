@@ -31,6 +31,8 @@ import { GalleryServiceComponent } from './gallery-service/gallery-service.compo
 import { Base64Component } from './base64/base64.component';
 import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
 import { InvertSwipeComponent } from './invert-swipe/invert-swipe.component';
+import { CarouselMinimalComponent } from './carousel-minimal/carousel-minimal.component';
+import { CarouselFixedComponent } from './carousel-fixed/carousel-fixed.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -65,5 +67,7 @@ export const FEATURES_COMPONENTS = [
   GalleryServiceComponent,
   Base64Component,
   DownloadCustomFilenameComponent,
-  InvertSwipeComponent
+  InvertSwipeComponent,
+  CarouselMinimalComponent,
+  CarouselFixedComponent
 ];

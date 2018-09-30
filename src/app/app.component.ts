@@ -23,7 +23,6 @@
  */
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UiService } from './core/services/ui.service';
 import { NavigationEnd, Router } from '@angular/router';
 
 import { filter } from 'rxjs/operators';
@@ -39,7 +38,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'app';
   private subscription: Subscription;
 
-  constructor(private router: Router, private ui: UiService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -48,13 +47,6 @@ export class AppComponent implements OnInit, OnDestroy {
     ).subscribe((event: NavigationEnd) => {
       ga('set', 'page', event.urlAfterRedirects);
       ga('send', 'pageview');
-    });
-  }
-
-  metaData() {
-    this.ui.setMetaData({
-      title: 'homepage',
-      description: 'Check my website'
     });
   }
 
