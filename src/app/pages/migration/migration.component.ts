@@ -34,9 +34,8 @@ import { Metadata, UiService } from '../../core/services/ui.service';
   templateUrl: 'migration.html'
 })
 export class MigrationComponent implements OnInit {
-
   constructor(private uiService: UiService,
-    private scrollService: PageScrollService,
+              private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#migration');

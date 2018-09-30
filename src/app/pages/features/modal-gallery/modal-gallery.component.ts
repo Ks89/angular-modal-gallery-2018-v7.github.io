@@ -36,6 +36,7 @@ import { Metadata, UiService } from '../../../core/services/ui.service';
   styleUrls: ['modal-gallery.scss']
 })
 export class ModalGalleryComponent implements OnInit {
+
   constructor(private uiService: UiService,
               private titleService: TitleService,
               private scrollService: PageScrollService,

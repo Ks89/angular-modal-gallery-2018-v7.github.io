@@ -22,24 +22,43 @@
  * SOFTWARE.
  */
 
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UiService } from './core/services/ui.service';
+import { NavigationEnd, Router } from '@angular/router';
+
+import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+
+declare let ga: Function;
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'app';
+  private subscription: Subscription;
 
-  constructor(private ui: UiService) {
+  constructor(private router: Router, private ui: UiService) {
   }
 
-  // check this in twitter card validator
+  ngOnInit() {
+    this.subscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      ga('set', 'page', event.urlAfterRedirects);
+      ga('send', 'pageview');
+    });
+  }
+
   metaData() {
     this.ui.setMetaData({
       title: 'homepage',
       description: 'Check my website'
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

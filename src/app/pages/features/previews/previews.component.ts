@@ -36,6 +36,7 @@ import { Metadata, UiService } from '../../../core/services/ui.service';
   styleUrls: ['previews.scss']
 })
 export class PreviewsComponent implements OnInit {
+
   constructor(private uiService: UiService,
               private titleService: TitleService,
               private scrollService: PageScrollService,

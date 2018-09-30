@@ -35,7 +35,6 @@ import { Metadata, UiService } from '../../../core/services/ui.service';
   templateUrl: 'global-config.html'
 })
 export class GlobalConfigComponent implements OnInit {
-
   constructor(private uiService: UiService,
               private titleService: TitleService,
               private scrollService: PageScrollService,
