@@ -99,7 +99,6 @@
     "@types/hammerjs": "^2.0.36",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.4",
-    "@types/jquery": "^3.3.10",
     "@types/mousetrap": "^1.6.0",
     "@types/node": "~10.11.3",
     "codelyzer": "^4.4.4",

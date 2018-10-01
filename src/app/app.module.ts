@@ -54,6 +54,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule.withServerTransition({appId: 'my-app'}),
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),

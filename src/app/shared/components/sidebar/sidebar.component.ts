@@ -30,4 +30,29 @@ import { Component } from '@angular/core';
   styleUrls: ['sidebar.scss']
 })
 export class SidebarComponent {
+  showFeatures = false;
+  showExamples = false;
+  showCarousel = false;
+  showModal = false;
+  showPlain = false;
+
+  onFeaturesClick() {
+    this.showFeatures = !this.showFeatures;
+  }
+
+  onExamplesClick() {
+    this.showExamples = !this.showExamples;
+  }
+
+  onCarouselClick() {
+    this.showCarousel = !this.showCarousel;
+  }
+
+  onModalClick() {
+    this.showModal = !this.showModal;
+  }
+
+  onPlainClick() {
+    this.showPlain = !this.showPlain;
+  }
 }
