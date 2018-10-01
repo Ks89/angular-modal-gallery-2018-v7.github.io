@@ -34,10 +34,10 @@ import { Metadata, UiService } from '../../../core/services/ui.service';
 import { Image } from '@ks89/angular-modal-gallery';
 
 @Component({
-  selector: 'app-fixed-width-page',
-  templateUrl: 'carousel-fixed.html'
+  selector: 'app-carousel-features-disables-page',
+  templateUrl: 'carousel-features-disables.html'
 })
-export class CarouselFixedComponent implements OnInit {
+export class CarouselFeaturesDisablesComponent implements OnInit {
   images: Image[] = [...IMAGES_RECT_ARRAY];
 
   configHtml: any = codemirrorHtml;
@@ -45,6 +45,10 @@ export class CarouselFixedComponent implements OnInit {
 
   codeHtml: string;
   codeTypescript: string;
+
+  autoPlay = true;
+  showArrows = true;
+  showDots = true;
 
   constructor(private uiService: UiService,
               private titleService: TitleService,
@@ -55,15 +59,46 @@ export class CarouselFixedComponent implements OnInit {
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#demo');
     this.scrollService.start(pageScrollInstance);
 
-    this.titleService.titleEvent.emit('Examples - Carousel width fixed width');
+    this.titleService.titleEvent.emit('Examples - Carousel disable features');
 
     this.codeHtml =
-      `  <ks-carousel [id]="109" [images]="images"
-  [carouselConfig]="{maxWidth: '766px'}"
-  [previewConfig]="{number: 5, size: {width: 'auto', height: '100px'}}"></ks-carousel>`;
+      `  <p>Autoplay: 
+      <button class="btn btn-primary" (click)="onChangeAutoPlay()">
+      {{autoPlay ? 'disable autoplay' : 'enable autoplay'}}
+      </button>
+    </p>
+    <p>Show Arrows: 
+      <button class="btn btn-primary" (click)="onChangeShowArrows()">
+      {{showArrows ? 'Hide Arrows' : 'Show Arrows'}}
+      </button>
+    </p>
+    <p>Show Dots: 
+      <button class="btn btn-primary" (click)="onChangeShowDots()">
+      {{showDots ? 'Hide Dots' : 'Show Dots'}}
+      </button>
+    </p>
+    <br>
+    <ks-carousel [id]="108" [images]="imagesRect"
+  [previewConfig]="{visible: false}"
+  [playConfig]="{autoPlay: autoPlay, interval: 3000, pauseOnHover: true}"
+  [carouselConfig]="{maxWidth: '100%', maxHeight: '400px', showArrows: showArrows, 
+                     objectFit: 'cover', keyboardEnable: true, modalGalleryEnable: false}"
+  [dotsConfig]="{visible: showDots}"></ks-carousel>`;
 
     this.codeTypescript =
       `  images: Image[]; // init this value with your images`;
+  }
+
+  onChangeAutoPlay() {
+    this.autoPlay = !this.autoPlay;
+  }
+
+  onChangeShowArrows() {
+    this.showArrows = !this.showArrows;
+  }
+
+  onChangeShowDots() {
+    this.showDots = !this.showDots;
   }
 
   ngOnInit() {
@@ -72,7 +107,7 @@ export class CarouselFixedComponent implements OnInit {
 
   metaData() {
     this.uiService.setMetaData(<Metadata>{
-      title: 'Carousel fixed width'
+      title: 'Carousel disable features'
     });
   }
 }

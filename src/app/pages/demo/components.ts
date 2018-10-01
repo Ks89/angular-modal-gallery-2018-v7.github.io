@@ -31,8 +31,16 @@ import { GalleryServiceComponent } from './gallery-service/gallery-service.compo
 import { Base64Component } from './base64/base64.component';
 import { DownloadCustomFilenameComponent } from './download-custom-filename/download-custom-filename.component';
 import { InvertSwipeComponent } from './invert-swipe/invert-swipe.component';
+
 import { CarouselMinimalComponent } from './carousel-minimal/carousel-minimal.component';
 import { CarouselFixedComponent } from './carousel-fixed/carousel-fixed.component';
+import { CarouselContentProjectionComponent } from './carousel-content-projection/carousel-content-projection.component';
+import { CarouselFeaturesDisablesComponent } from './carousel-features-disables/carousel-features-disables.component';
+import { CarouselNoAutoplayComponent } from './carousel-no-autoplay/carousel-no-autoplay.component';
+import { CarouselNoInfiniteComponent } from './carousel-no-infinite/carousel-no-infinite.component';
+import { CarouselCustomAutoplayComponent } from './carousel-custom-autoplay/carousel-custom-autoplay.component';
+import { CarouselCustomPreviewsComponent } from './carousel-custom-previews/carousel-custom-previews.component';
+import { CarouselWithDescriptionComponent } from './carousel-with-description/carousel-with-description.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -69,5 +77,12 @@ export const FEATURES_COMPONENTS = [
   DownloadCustomFilenameComponent,
   InvertSwipeComponent,
   CarouselMinimalComponent,
-  CarouselFixedComponent
+  CarouselFixedComponent,
+  CarouselContentProjectionComponent,
+  CarouselFeaturesDisablesComponent,
+  CarouselNoAutoplayComponent,
+  CarouselNoInfiniteComponent,
+  CarouselCustomAutoplayComponent,
+  CarouselCustomPreviewsComponent,
+  CarouselWithDescriptionComponent
 ];
