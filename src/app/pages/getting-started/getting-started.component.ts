@@ -31,7 +31,8 @@ import { Metadata, UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-getting-started-page',
-  templateUrl: 'getting-started.html'
+  templateUrl: 'getting-started.html',
+  styleUrls: ['getting-started.scss']
 })
 export class GettingStartedComponent implements OnInit {
 

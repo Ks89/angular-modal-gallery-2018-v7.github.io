@@ -31,7 +31,8 @@ import { Metadata, UiService } from '../../core/services/ui.service';
 
 @Component({
   selector: 'app-migration-page',
-  templateUrl: 'migration.html'
+  templateUrl: 'migration.html',
+  styleUrls: ['migration.scss']
 })
 export class MigrationComponent implements OnInit {
   constructor(private uiService: UiService,

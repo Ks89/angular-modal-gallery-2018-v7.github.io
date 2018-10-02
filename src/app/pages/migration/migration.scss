@@ -22,16 +22,7 @@
  * SOFTWARE.
  */
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { IntroHeaderComponent } from './intro-header/intro-header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
-import { SidebarFeaturesComponent } from './sidebar-features/sidebar-features.component';
-
-export const SHARED_COMPONENTS = [
-  NavbarComponent,
-  IntroHeaderComponent,
-  FooterComponent,
-  SidebarDemoComponent,
-  SidebarFeaturesComponent
-];
+.col-12 {
+  padding-right: 20px;
+  padding-left: 20px;
+}

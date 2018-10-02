@@ -22,16 +22,16 @@
  * SOFTWARE.
  */
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { IntroHeaderComponent } from './intro-header/intro-header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
-import { SidebarFeaturesComponent } from './sidebar-features/sidebar-features.component';
+export const NAME = 'ks';
 
-export const SHARED_COMPONENTS = [
-  NavbarComponent,
-  IntroHeaderComponent,
-  FooterComponent,
-  SidebarDemoComponent,
-  SidebarFeaturesComponent
-];
+export function getToken(tokenName: string = NAME): string | null {
+  return localStorage.getItem(tokenName);
+}
+
+export function setToken(token: string, tokenName: string = NAME) {
+  localStorage.setItem(tokenName, token);
+}
+
+export function removeToken(tokenName: string = NAME) {
+  localStorage.removeItem(tokenName);
+}

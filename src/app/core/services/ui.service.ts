@@ -45,7 +45,7 @@ export class UiService {
   constructor(private meta: Meta, private title: Title) {
   }
 
-  public setMetaData(config: Metadata) {
+  setMetaData(config: Metadata) {
     const description = config.description || this.appDescription;
     const image = config.image || this.appImage;
     const title = config.title

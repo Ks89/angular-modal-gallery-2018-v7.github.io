@@ -21,38 +21,66 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+@import "theme";
 
-import { Component } from '@angular/core';
+.menu-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #55595c;
+  cursor: pointer;
+  margin-top: 15px;
 
-@Component({
-  selector: 'app-sidebar',
-  templateUrl: 'sidebar.html',
-  styleUrls: ['sidebar.scss']
-})
-export class SidebarComponent {
-  showFeatures = false;
-  showExamples = false;
-  showCarousel = false;
-  showModal = false;
-  showPlain = false;
-
-  onFeaturesClick() {
-    this.showFeatures = !this.showFeatures;
+  &.no-arrow {
+    margin-left: 18px;
   }
 
-  onExamplesClick() {
-    this.showExamples = !this.showExamples;
+  &:hover {
+    color: #414446;
   }
 
-  onCarouselClick() {
-    this.showCarousel = !this.showCarousel;
+  > h4 {
+    font-size: 20px;
+    cursor: default;
+    margin-bottom: 14px;
   }
 
-  onModalClick() {
-    this.showModal = !this.showModal;
-  }
+  > .menu-secondary {
 
-  onPlainClick() {
-    this.showPlain = !this.showPlain;
+    > .menu-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      > img {
+        margin-bottom: 8px;
+      }
+
+      > h5 {
+        color: #99979c;
+        font-size: 18px;
+        user-select: none;
+        margin-left: 5px;
+
+        &:hover {
+          color: #6D6D70;
+        }
+      }
+    }
+
+    > h6 {
+      color: #B1AFB4;
+      font-size: 15px;
+      margin-left: 6px;
+      user-select: none;
+
+      &:hover {
+        color: #7D7D80;
+      }
+    }
+
   }
 }
+

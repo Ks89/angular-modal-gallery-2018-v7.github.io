@@ -22,48 +22,11 @@
  * SOFTWARE.
  */
 
-@import "theme";
+import { Component } from '@angular/core';
 
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  > .menu-primary {
-    color: #55595c;
-    cursor: pointer;
-    margin-top: 15px;
-
-    &:hover {
-      color: #414446;
-    }
-
-    > h4 {
-      font-size: 20px;
-    }
-
-    > .menu-secondary {
-      margin-left: 10px;
-
-      > h5 {
-        color: #99979c;
-        font-size: 18px;
-
-        &:hover {
-          color: #6D6D70;
-        }
-      }
-
-      > h6 {
-        color: #B1AFB4;
-        font-size: 15px;
-        margin-left: 6px;
-
-        &:hover {
-          color: #7D7D80;
-        }
-      }
-    }
-  }
-}
+@Component({
+  selector: 'app-sidebar-features',
+  templateUrl: 'sidebar-features.html',
+  styleUrls: ['sidebar-features.scss']
+})
+export class SidebarFeaturesComponent {}

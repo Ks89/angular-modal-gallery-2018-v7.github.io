@@ -21,17 +21,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+@import "theme";
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { IntroHeaderComponent } from './intro-header/intro-header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
-import { SidebarFeaturesComponent } from './sidebar-features/sidebar-features.component';
+.menu-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #55595c;
+  cursor: pointer;
+  margin-top: 15px;
 
-export const SHARED_COMPONENTS = [
-  NavbarComponent,
-  IntroHeaderComponent,
-  FooterComponent,
-  SidebarDemoComponent,
-  SidebarFeaturesComponent
-];
+  &:hover {
+    color: #414446;
+  }
+
+  > h4 {
+    font-size: 20px;
+    cursor: default;
+    margin-bottom: 14px;
+  }
+
+  > h5 {
+    color: #99979c;
+    font-size: 18px;
+
+    &:hover {
+      color: #6D6D70;
+    }
+  }
+
+}
