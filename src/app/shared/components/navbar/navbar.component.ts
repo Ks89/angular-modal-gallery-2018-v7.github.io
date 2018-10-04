@@ -22,8 +22,9 @@
  * SOFTWARE.
  */
 
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-navbar',
@@ -35,7 +36,15 @@ export class NavbarComponent {
 
   collapsed = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe( ['(min-width: 990px)'])
+      .subscribe(result => {
+        if (result.matches) {
+          console.log('min width 990px');
+          this.collapsed = false;
+        }
+      });
+  }
 
   isNavItemActive(location: string) {
     return this.router.url.includes(location) ? 'active' : '';
