@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,9 +31,23 @@ import { Router } from '@angular/router';
   styleUrls: ['navbar.scss']
 })
 export class NavbarComponent {
+  navbarHeight = '56px';
+
+  collapsed = false;
+
   constructor(private router: Router) {}
 
   isNavItemActive(location: string) {
     return this.router.url.includes(location) ? 'active' : '';
+  }
+
+  onNavigateTo(path: string) {
+    this.collapsed = false;
+    this.router.navigate([path]);
+  }
+
+  onToggle() {
+    this.collapsed = !this.collapsed;
+    this.navbarHeight = this.collapsed ? '56px' : '150px';
   }
 }
