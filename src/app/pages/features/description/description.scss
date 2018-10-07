@@ -21,42 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 @import "theme";
 
-.menu-primary {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  color: #55595c;
-  cursor: pointer;
-  margin-top: 15px;
-
-  &:hover {
-    color: #414446;
-  }
-
-  > h4 {
-    font-size: 20px;
-    cursor: default;
-    margin-bottom: 14px;
-  }
-
-  > h5 {
-    color: #99979c;
-    font-size: 18px;
-    cursor: default;
-    margin-top: 8px;
-  }
-
-  > h6 {
-    color: #B1AFB4;
-    font-size: 185x;
-    margin-left: 10px;
-
-    &:hover {
-      color: #7D7D80;
-    }
-  }
-
+.very-big-tds {
+  min-width: 180px !important;
 }
+
+.big-tds {
+  min-width: 146px !important;
+}
+

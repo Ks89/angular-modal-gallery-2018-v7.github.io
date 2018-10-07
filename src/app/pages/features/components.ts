@@ -7,9 +7,15 @@ import { PreviewsComponent } from './previews/previews.component';
 import { UpperButtonsComponent } from './upper-buttons/upper-buttons.component';
 import { OverviewComponent } from './overview/overview.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CommonComponent } from './common/common.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { DescriptionComponent } from './description/description.component';
 
 export const FEATURES_COMPONENTS = [
   FeaturesComponent,
+  CommonComponent,
+  AccessibilityComponent,
+  DescriptionComponent,
   ModalGalleryComponent,
   PlainGalleryComponent,
   PreviewsComponent,

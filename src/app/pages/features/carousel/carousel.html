@@ -4,7 +4,331 @@
   <h1 id="Carousel" class="link clickable">
     <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">Carousel</a>
   </h1>
-  <p>Component to show either full width or fixed width carousels also with previews and transcluded content.</p>
+  <p>Carousel component is a new component to build responsive carousels. It contains a collection of <code><a pageScroll href="#Image">Images</a></code>,
+    like all other components exposed by this library and many other config objects.
+    It displays images as a carousel, so a big image (either full or limited width) with right and left arrows and it shows images every a fixed amount of time.
+    Optionally, it can display previews above/below the main image. A live example of this component is available on the homepage of this website.
+    Obviously, there are additional configurable features, like aria, keyboard navigation, sizes and so on.
+    A very cool feature, it the integration with ModalGallery. In fact, you can configure the carousel to open the current image in a modal way,
+    using <code><a [routerLink]="['/features/modal-gallery']">ModalGalleryComponent</a></code>.
   <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td>Template (HTML) selector</td>
+      <td><code>ks-carousel</code></td>
+    </tr>
+    <tr>
+      <td>Exported as</td>
+      <td><code>ksCarousel</code></td>
+    </tr>
+    </tbody>
+  </table>
 
+  <section>
+    <h2>Inputs</h2>
+    <table class="table table-hover table-sm">
+      <tbody>
+        <tr>
+          <td class="big-tds"><small><code>id</code></small></td>
+          <td>
+            <div>
+              <i>Type: </i><code>number</code>
+            </div>
+            <div>
+              A mandatory unique id >= 0 of the current carousel.
+              Despite CarouselComponent doesn't use this value, it must be unique because a carousel can open a modal image
+              using <a pageScroll href="#GalleryService"><code>GalleryService</code></a>.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds"><small><code>images</code></small></td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#Image">Image[]</a></code>
+            </div>
+            <div>
+             <p> The mandatory array of <a pageScroll href="#Image"><code>Image</code></a> objects, that represent both the thumb gallery and the
+              modal images. In fact, an <a pageScroll href="#Image"><code>Image</code></a> is an object with both thumb and
+              image source paths with other additional configuration parameters. For more info check <a pageScroll href="#Image"><code>Image</code></a>.</p>
+              <p>Please, don't use <code>this.images.push(img)</code> when you want to modify this array, instead re-assign it to trigger change detection.
+              For instance: <code>this.images = [...this.images, newImage]</code> to create a new array from the original with a new image at the end.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>carouselConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#CarouselConfig">CarouselConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to configure the carousel, like to change sizes, hide some features and so on.</p>
+              <p>For more information, please see the <a pageScroll href="#CarouselConfig">CarouselConfig</a>'s section</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>playConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#PlayConfig">PlayConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to change the behaviour of auto-navigation, like autoPlay and interval in milliseconds.</p>
+              <p>For more information, please see the <a pageScroll href="#PlayConfig">PlayConfig</a>'s section</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>carouselImageConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#CarouselImageConfig">CarouselImageConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to change current image of the carousel, like description or to invert the swipe direction.</p>
+              <p>For more information, please see the <a pageScroll href="#CarouselImageConfig">CarouselImageConfig</a>'s section</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>dotsConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#DotsConfig">DotsConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to configure dots.</p>
+              <p>For more information, please see the <a pageScroll href="#DotsConfig">DotsConfig</a>'s section</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>previewConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a [routerLink]="['/features/previews']">PreviewConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to configure previews, for instance to choose either the number, visibility, arrows, sizes.
+                If you want to know how to use this object, please check <a [routerLink]="['/features/previews']">PreviewsComponent</a>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>infinite</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code>boolean</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p></p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>accessibilityConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#AccessibilityConfig">AccessibilityConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to customize accessibility features, like alt, titles, aria-labels and so on. CarouselComponent applies a default value with english texts.
+                This default config object is exported as <small><code><a [routerLink]="['/features/default-values']">KS_DEFAULT_ACCESSIBILITY_CONFIG</a></code></small>.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  </section>
+
+  <br>
+  <h2 id="CarouselConfig" class="link clickable">
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">CarouselConfig</a>
+  </h2>
+  <p>Interface to configure the carousel, like to change sizes, hide some features and so on.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><small><code>maxWidth</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>string</code>
+        </div>
+        <div>
+          <p>Maximum width of the carousel. It's used to set the CSS property maxWidth. '100%' (full width) by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>maxHeight</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>string</code>
+        </div>
+        <div>
+          <p>Maximum height of the carousel. It's used to set the CSS property maxHeight. '400px%' by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>showArrows</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code>
+        </div>
+        <div>
+          <p>boolean to disable both left and right arrows. true by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>objectFit</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>string</code>
+        </div>
+        <div>
+          <p>CSS objectFit property. For more information check
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">Mozilla MDN web doc</a>.
+          'cover' by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>keyboardEnable</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code>
+        </div>
+        <div>
+          <p>boolean to disable keyboard navigation. true by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>modalGalleryEnable</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code>
+        </div>
+        <div>
+          <p>boolean enable clicks on the current image to open modal gallery. false by default.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h2 id="CarouselImageConfig" class="link clickable">
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">CarouselImageConfig</a>
+  </h2>
+  <p>Interface to change current image of the carousel, like description or to invert the swipe direction.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><small><code>description</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+        </div>
+        <div>
+          <p>Optional description text.
+            Attention: this is not the full description, but only the last part, after image numbers.
+            For instance: `Image 2/12 - <code>description</code>`. To ignore this feature, don't add this property.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>invertSwipe</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+        </div>
+        <div>
+          <p>Optional boolean property to invert the default swipe direction on devices with touchscreen.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <h2 id="PlayConfig" class="link clickable">
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">PlayConfig</a>
+  </h2>
+  <p>Interface to change the behaviour of auto-navigation, like autoPlay and interval in milliseconds.</p>
+  <br>
+  <table class="table table-hover table-sm">
+    <tbody>
+    <tr>
+      <td><small><code>autoPlay</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code>
+        </div>
+        <div>
+          <p>If false autoPlay is disabled. true by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>interval</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>number</code>
+        </div>
+        <div>
+          <p>Amount of time in milliseconds between every image.
+            It's used only when autoPlay is enabled. 5000 by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>pauseOnHover</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code>
+        </div>
+        <div>
+          <p>If false, carousel won't stop moving the mouse pointer over it. true by default.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>

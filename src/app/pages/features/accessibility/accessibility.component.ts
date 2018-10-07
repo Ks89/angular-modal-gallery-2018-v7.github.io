@@ -21,42 +21,40 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-@import "theme";
 
-.menu-primary {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  color: #55595c;
-  cursor: pointer;
-  margin-top: 15px;
+import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
-  &:hover {
-    color: #414446;
+import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll';
+
+import { TitleService } from '../../../core/services/title.service';
+import { Metadata, UiService } from '../../../core/services/ui.service';
+
+@Component({
+  selector: 'app-accessibility-page',
+  templateUrl: 'accessibility.html',
+  styleUrls: ['accessibility.scss']
+})
+export class AccessibilityComponent implements OnInit {
+
+  constructor(private uiService: UiService,
+              private titleService: TitleService,
+              private scrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) {
+    this.titleService.titleEvent.emit('Features - Accessibility');
+
+    // scroll to the top of the document
+    const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#features');
+    this.scrollService.start(pageScrollInstance);
   }
 
-  > h4 {
-    font-size: 20px;
-    cursor: default;
-    margin-bottom: 14px;
+  ngOnInit() {
+    this.metaData();
   }
 
-  > h5 {
-    color: #99979c;
-    font-size: 18px;
-    cursor: default;
-    margin-top: 8px;
+  metaData() {
+    this.uiService.setMetaData(<Metadata>{
+      title: 'Accessibility'
+    });
   }
-
-  > h6 {
-    color: #B1AFB4;
-    font-size: 185x;
-    margin-left: 10px;
-
-    &:hover {
-      color: #7D7D80;
-    }
-  }
-
 }

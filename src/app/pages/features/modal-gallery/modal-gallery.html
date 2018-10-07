@@ -92,6 +92,39 @@
         <tr>
           <td class="big-tds">
             <div>
+              <small><code>dotsConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#DotsConfig">DotsConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to configure dots.</p>
+              <p>For more information, please see the <a pageScroll href="#DotsConfig">DotsConfig</a>'s section</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
+              <small><code>currentImageConfig</code></small>
+            </div>
+          </td>
+          <td>
+            <div>
+              <i>Type: </i><code><a pageScroll href="#CurrentImageConfig">CurrentImageConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            </div>
+            <div>
+              <p>Interface to configure current image in modal-gallery. For instance you can either disable navigation when you click on the current image (enabled by default),
+                or change descriptions, loading spinners or enable download features.</p>
+              <p>For more information, please see the <a pageScroll href="#CurrentImageConfig">CurrentImageConfig</a>'s section</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="big-tds">
+            <div>
               <small><code>previewConfig</code></small>
             </div>
           </td>
@@ -134,7 +167,7 @@
             </div>
             <div>
               <p>Interface to customize accessibility features, like alt, titles, aria-labels and so on. ModalGalleryComponent applies a default value with english texts.
-                This default config object is exported as <small><code><a [routerLink]="['/features/default-values']">KS_DEFAULT_ACCESSIBILITY_CONFIG'</a></code></small>.</p>
+                This default config object is exported as <small><code><a [routerLink]="['/features/default-values']">KS_DEFAULT_ACCESSIBILITY_CONFIG</a></code></small>.</p>
             </div>
           </td>
         </tr>
@@ -166,23 +199,6 @@
             <div>
               <p>Interface to configure thumbnails, for instance to change the layout. Furthermore, it's useful to write full custom layouts (for more info see official demos).
                 ModalGalleryComponent pass this object to PlainGalleryComponent, so if you want to know how to use it, please check <a [routerLink]="['/features/plain-gallery']">PlainGalleryComponent</a>.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="big-tds">
-            <div>
-              <small><code>currentImageConfig</code></small>
-            </div>
-          </td>
-          <td>
-            <div>
-              <i>Type: </i><code><a pageScroll href="#CurrentImageConfig">CurrentImageConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
-            </div>
-            <div>
-              <p>Interface to configure current image in modal-gallery. For instance you can either disable navigation when you click on the current image (enabled by default),
-                or change descriptions, loading spinners or enable download features.</p>
-              <p>For more information, please see the <a pageScroll href="#CurrentImageConfig">CurrentImageConfig</a>'s section</p>
             </div>
           </td>
         </tr>
@@ -284,52 +300,6 @@
       </tbody>
     </table>
   </section>
-
-  <br>
-
-  <h2 id="Image" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">Image</a>
-  </h2>
-  <p>The main object that represents an Image with both modal, thumbnail, description and so on.
-    To initialize <code>ModalGallery</code> you must instantiate an array of these objects with the 'new' keyword.</p>
-  <br>
-  <table class="table table-hover table-sm">
-    <tbody>
-    <tr>
-      <td><small><code>id</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>number</code>
-        </div>
-        <div>
-          <p>Mandatory <b>UNIQUE</b> id to identify the image.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><small><code>modal</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>ModalImage</code>
-        </div>
-        <div>
-          <p>Mandatory interface to configure the modal image.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><small><code>plain</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><a [routerLink]="['/features/plain-gallery']"><code>PlainImage</code></a><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>Optional interface to configure the thumbnail (or 'plain image').</p>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
 
   <br>
 
@@ -552,273 +522,6 @@
 
   <br>
 
-  <h2 id="DotsConfig" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">DotsConfig</a>
-  </h2>
-  <p>Interface to configure optional dots below the modal image.</p>
-  <br>
-  <table class="table table-hover table-sm">
-    <tbody>
-    <tr>
-      <td><small><code>visible</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>boolean</code>
-        </div>
-        <div>
-          <p>If true, dots are visible, false otherwise. true by default.</p>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-
-  <h2 id="Description" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">Description</a>
-  </h2>
-  <p>Interface to set a config image description.</p>
-  <br>
-  <table class="table table-hover table-sm">
-    <tbody>
-      <tr>
-        <td class="very-big-tds"><small><code>strategy</code></small></td>
-        <td>
-          <div>
-            <i>Type: </i><code>DescriptionStrategy</code>
-          </div>
-          <div>
-            <p>Enum to choose when description should be visible. <code>ALWAYS_VISIBLE</code> by default.</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="very-big-tds"><small><code>imageText</code></small></td>
-        <td>
-          <div>
-            <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-          </div>
-          <div>
-            <p>It's the beginning part of the description. By default its value is the string 'Image',
-              but you can change the language specifying your value, for instance 'Immagine' (italian),
-              'Bild' (german), 'Imagen' (spanish) or also an empty string ''.</p>
-            <p>Example: `<code>imageText</code> 2/12 - bla bla`</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="very-big-tds"><small><code>numberSeparator</code></small></td>
-        <td>
-          <div>
-            <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-          </div>
-          <div>
-            <p>It's the text between the current image number and the total number of images.</p>
-            <p>Example: `Image 2<code>numberSeparator</code>12 - bla bla`</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="very-big-tds"><small><code>beforeTextDescription</code></small></td>
-        <td>
-          <div>
-            <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-          </div>
-          <div>
-            <p>It's the text between the total number of images and the final description text</p>
-            <p>Example: `Image 2/12<code>beforeTextDescription</code>bla bla`</p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="very-big-tds"><small><code>customFullDescription</code></small></td>
-        <td>
-          <div>
-            <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-          </div>
-          <div>
-            <p>It's the full text description. If you set this value, all others will be ignored.</p>
-            <p>Obviously, if you want a dynamic description with the current image number and so on,
-              you have to build it by yourself. Otherwise, you should use the other parameters of this object
-              to customize the default description. </p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="very-big-tds"><small><code>style</code></small></td>
-        <td>
-          <div>
-            <i>Type: </i><code>DescriptionStyle</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-          </div>
-          <div>
-            <p>Interface to change background color, text color, margins, positions, sizes and so on.</p>
-            <p>All properties are optional and some of them have default values. Check <code><a pageScroll href="#DescriptionStyle">DescriptionStyle</a></code> for more information.</p>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <br>
-
-  <h2 id="DescriptionStyle" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">DescriptionStyle</a>
-  </h2>
-  <p>Interface to change description style.</p>
-  <br>
-  <table class="table table-hover table-sm">
-    <tbody>
-    <tr>
-      <td class="very-big-tds"><small><code>bgColor</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'background' property. <code>rgba(0, 0, 0, .5)</code> by default.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>textColor</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'color' property. <code>white</code> by default.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>marginTop</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'margin-top' property. <code>0px</code> by default.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>marginBottom</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'margin-bottom' property. <code>5px</code> by default.</p>
-          <p class="text-danger"><b>Breaking change: From angular-modal-gallery 6.0.0, default value will be '0px'</b></p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>marginLeft</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'margin-left' property. <code>0px</code> by default.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>marginRight</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'margin-right' property. <code>0px</code> by default.</p>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="very-big-tds"><small><code>position</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'position' property.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>top</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'top' property.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>bottom</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'bottom' property.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>left</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'left' property.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>right</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'right' property.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>width</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'width' property.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="very-big-tds"><small><code>height</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code><span class="badge badge-pill badge-secondary float-right">optional</span>
-        </div>
-        <div>
-          <p>CSS 'height' property.</p>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-
   <h2 id="KeyboardConfig" class="link clickable">
     <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">KeyboardConfig</a>
   </h2>
@@ -932,106 +635,6 @@
 
   <br>
 
-  <h2 id="AccessibilityConfig" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">AccessibilityConfig</a>
-  </h2>
-  <p>Interface to configure accessibility features as you want, for instance with a different language.</p>
-  <p>These are all supported string fields (grouped by components):</p>
-  <br>
-  <ul>
-    <li>Background
-      <ul>
-        <li><code>backgroundAriaLabel</code></li>
-        <li><code>backgroundTitle</code></li>
-      </ul>
-    </li>
-    <li>Plain gallery
-      <ul>
-        <li><code>plainGalleryContentAriaLabel</code></li>
-        <li><code>plainGalleryContentTitle</code></li>
-      </ul>
-    </li>
-    <li>Modal gallery
-      <ul>
-        <li><code>modalGalleryContentAriaLabel</code></li>
-        <li><code>modalGalleryContentTitle</code></li>
-      </ul>
-    </li>
-    <li>Loading spinner
-      <ul>
-        <li><code>loadingSpinnerAriaLabel</code></li>
-        <li><code>loadingSpinnerTitle</code></li>
-      </ul>
-    </li>
-    <li>Current image
-      <ul>
-        <li><code>mainContainerAriaLabel</code></li>
-        <li><code>mainContainerTitle</code></li>
-        <li><code>mainPrevImageAriaLabel</code></li>
-        <li><code>mainPrevImageTitle</code></li>
-        <li><code>mainNextImageAriaLabel</code></li>
-        <li><code>mainNextImageTitle</code></li>
-      </ul>
-    </li>
-    <li>Dots
-      <ul>
-        <li><code>dotsContainerAriaLabel</code></li>
-        <li><code>dotsContainerTitle</code></li>
-        <li><code>dotAriaLabel</code></li>
-      </ul>
-    </li>
-    <li>Previews
-      <ul>
-        <li><code>previewsContainerAriaLabel</code></li>
-        <li><code>previewsContainerTitle</code></li>
-        <li><code>previewScrollPrevAriaLabel</code></li>
-        <li><code>previewScrollPrevTitle</code></li>
-        <li><code>previewScrollNextAriaLabel</code></li>
-        <li><code>previewScrollNextTitle</code></li>
-      </ul>
-    </li>
-  </ul>
-
-  <br>
-
-  <h2 id="Size" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">Size</a>
-  </h2>
-  <p>Interface to customize images/icon sizes.</p>
-  <br>
-  <table class="table table-hover table-sm">
-    <tbody>
-    <tr>
-      <td><small><code>width</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code>
-        </div>
-        <div>
-          <p style="margin-bottom: 0;">It can be a valid value for the css 'width' property.</p>
-          <p style="margin-bottom: 0;">For instance, you can use either '100px', 'auto', '20%'.</p>
-          <p style="margin-bottom: 0;">Default values change depending by the related component.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><small><code>height</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>string</code>
-        </div>
-        <div>
-          <p style="margin-bottom: 0;">It can be a valid value for the css 'height' property.</p>
-          <p style="margin-bottom: 0;">For instance, you can use either '100px', 'auto', '20%'.</p>
-          <p style="margin-bottom: 0;">Default values change depending by the related component.</p>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-
   <h2 id="GalleryService" class="link clickable">
     <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">GalleryService</a>
   </h2>
@@ -1066,19 +669,6 @@
       </tr>
     </tbody>
   </table>
-
-  <br>
-
-  <h2 id="DescriptionStrategy" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">DescriptionStrategy</a>
-  </h2>
-  <p>Enum to decide when description should be visible or hidden. It can be one of these enum values:</p>
-  <br>
-  <ul>
-    <li><code>ALWAYS_HIDDEN</code>: description is always hidden</li>
-    <li><code>ALWAYS_VISIBLE</code>: description is always visible</li>
-    <li><code>HIDE_IF_EMPTY</code>: description is visible if valid</li>
-  </ul>
 
   <br>
 
