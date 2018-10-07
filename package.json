@@ -74,7 +74,7 @@
     "@angular/pwa": "^0.9.0-rc.1",
     "@angular/router": "~7.0.0-rc.0",
     "@angular/service-worker": "~7.0.0-rc.0",
-    "@ks89/angular-modal-gallery": "^7.0.0-alpha.1",
+    "@ks89/angular-modal-gallery": "^7.0.0-alpha.2",
     "@ks89/ngx-codemirror": "^2.0.1",
     "@nguniversal/express-engine": "^6.1.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
