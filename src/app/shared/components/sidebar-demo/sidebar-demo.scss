@@ -28,19 +28,14 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #55595c;
-  cursor: pointer;
   margin-top: 15px;
 
   &.no-arrow {
     margin-left: 18px;
   }
 
-  &:hover {
-    color: #414446;
-  }
-
   > h4 {
+    color: #101010;
     font-size: 20px;
     cursor: default;
     margin-bottom: 14px;
@@ -59,25 +54,27 @@
       }
 
       > h5 {
-        color: #99979c;
+        color: #55595c;
         font-size: 18px;
         user-select: none;
         margin-left: 5px;
+        cursor: pointer;
 
         &:hover {
-          color: #6D6D70;
+          color: #404345;
         }
       }
     }
 
     > h6 {
-      color: #B1AFB4;
+      color: #666a6e;
       font-size: 15px;
       margin-left: 6px;
       user-select: none;
+      cursor: pointer;
 
       &:hover {
-        color: #7D7D80;
+        color: #404345;
       }
     }
 
