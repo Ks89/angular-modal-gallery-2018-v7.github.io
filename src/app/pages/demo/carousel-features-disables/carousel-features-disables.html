@@ -52,81 +52,67 @@
           </td>
         </tr>
         <tr>
-          <td><code>modalImages</code></td>
+          <td><code>images</code></td>
           <td>
             <div><i>Value: </i><code>Image[]</code></div>
             <div><b class="text-success">Array of <code>Image</code> objects</b></div>
           </td>
         </tr>
         <tr>
-          <td><code>currentImageConfig</code></td>
+          <td><code>carouselConfig</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
+            <div><i>Value: </i><code>&#123; maxWidth: '100%', maxHeight: '400px', showArrows: showArrows, objectFit: 'cover', keyboardEnable: true, modalGalleryEnable: false &#125;</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>No downloadable at all, default loading spinner, clickable current image and with default description (always visible)</div>
+            <div>Full width carousel with height 400px, image cover, togglable arrows via an external variable, keyboard navigation,
+              but without modal gallery</div>
           </td>
         </tr>
         <tr>
-          <td><code>buttonsConfig</code></td>
+          <td><code>playConfig</code></td>
           <td>
-            <div><i>Value: </i>see the ButtonsConfig object above</div>
+            <div><i>Value: </i><code>&#123; autoPlay: autoPlay, interval: 3000, pauseOnHover: true &#125;</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>It will show only the exturl button as a custom button to navigate to an external url in a new tab</div>
+            <div>Togglable autoPlay via an external variable, pauseOnHover is enabled and there are 5000ms of delay</div>
           </td>
         </tr>
         <tr>
-          <td><code>enableCloseOutside</code></td>
+          <td><code>carouselImageConfig</code></td>
           <td>
             <div><i>Value: </i><code>undefined</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>Clicking on the semi-transparent background, modal-gallery will close</div>
+            <div>No description, and swipe not inverted</div>
           </td>
         </tr>
         <tr>
           <td><code>dotsConfig</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
+            <div><i>Value: </i><code>visible: showDots</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>It will show dots below the current modal image</div>
+            <div>Togglable dots via an external variable</div>
           </td>
         </tr>
         <tr>
           <td><code>previewConfig</code></td>
           <td>
-            <div><i>Value: </i><code>undefined</code></div>
+            <div><i>Value: </i><code>&#123; visible: false &#125;</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>It will show 3 clickable previews (default size) with arrows</div>
+            <div>Hidden previews</div>
           </td>
         </tr>
         <tr>
-          <td><code>slideConfig</code></td>
+          <td><code>infinite</code></td>
           <td>
             <div><i>Value: </i><code>undefined</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>Infinite sliding is disabled by default and side previews are visible with a default size</div>
+            <div>Infinite sliding is enabled by default</div>
           </td>
         </tr>
         <tr>
           <td><code>accessibilityConfig</code></td>
           <td>
             <div><i>Value: </i><code>undefined</code></div>
+            <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
             <div><small>(an object with all default english accessibility values by default)</small></div>
-            <div>English accessibility values</div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>keyboardConfig</code></td>
-          <td>
-            <div><i>Value: </i><code>undefined</code></div>
-            <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>plainGalleryConfig</code></td>
-          <td>
-            <div><i>Value: </i><code>undefined</code></div>
-            <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>Row plain gallery with default layout</div>
           </td>
         </tr>
       </tbody>
