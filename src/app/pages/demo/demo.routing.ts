@@ -41,6 +41,7 @@ import { CarouselNoInfiniteComponent } from './carousel-no-infinite/carousel-no-
 import { CarouselCustomAutoplayComponent } from './carousel-custom-autoplay/carousel-custom-autoplay.component';
 import { CarouselCustomPreviewsComponent } from './carousel-custom-previews/carousel-custom-previews.component';
 import { CarouselWithDescriptionComponent } from './carousel-with-description/carousel-with-description.component';
+import { CarouselOutputsComponent } from './carousel-outputs/carousel-outputs.component';
 
 export const routes: Routes = [
   {
@@ -99,6 +100,7 @@ export const routes: Routes = [
       {path: 'carousel-custom-autoplay', component: CarouselCustomAutoplayComponent},
       {path: 'carousel-custom-previews', component: CarouselCustomPreviewsComponent},
       {path: 'carousel-with-description', component: CarouselWithDescriptionComponent},
+      {path: 'carousel-outputs', component: CarouselOutputsComponent}
     ]
   }
 ];
