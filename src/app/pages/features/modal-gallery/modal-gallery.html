@@ -4,7 +4,7 @@
   <h1 id="ModalGallery" class="link clickable">
     <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">ModalGallery</a>
   </h1>
-  <p>ModalGallery component is the main component of this library. It contains the collection of <code><a pageScroll href="#Image">Images</a></code>
+  <p>ModalGallery component is the main component of this library. It contains the collection of <code><a [routerLink]="['/features/common']">Images</a></code>
     and many other config objects.
     It displays images as thumbnails (thanks to <code><a [routerLink]="['/features/plain-gallery']">PlainGalleryComponent</a></code>).
     Clicking on one of them, the image will be shown in full screen in a modal way using
@@ -47,12 +47,12 @@
           <td class="big-tds"><small><code>modalImages</code></small></td>
           <td>
             <div>
-              <i>Type: </i><code><a pageScroll href="#Image">Image[]</a></code>
+              <i>Type: </i><code><a [routerLink]="['/features/common']">Image[]</a></code>
             </div>
             <div>
-              The mandatory array of <a pageScroll href="#Image"><code>Image</code></a> objects, that represent both the thumb gallery and the
-              modal images. In fact, an <a pageScroll href="#Image"><code>Image</code></a> is an object with both thumb and
-              image source paths with other additional configuration parameters. For more info check <a pageScroll href="#Image"><code>Image</code></a>.
+              The mandatory array of <code><a [routerLink]="['/features/common']">Image</a></code> objects, that represent both the thumb gallery and the
+              modal images. In fact, an <code><a [routerLink]="['/features/common']">Image</a></code> is an object with both thumb and
+              image source paths with other additional configuration parameters. For more info check <code><a [routerLink]="['/features/common']">Image</a></code>.
               Please don't use <code>this.images.push(img)</code>, when you want to modify this array, instead re-assign it to trigger change detection.
               For instance: <code>this.images = [...this.images, newImage]</code> to create a new array from the original with a new image at the end.
             </div>
@@ -97,11 +97,11 @@
           </td>
           <td>
             <div>
-              <i>Type: </i><code><a pageScroll href="#DotsConfig">DotsConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+              <i>Type: </i><code><a [routerLink]="['/features/common']">DotsConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
             </div>
             <div>
               <p>Interface to configure dots.</p>
-              <p>For more information, please see the <a pageScroll href="#DotsConfig">DotsConfig</a>'s section</p>
+              <p>For more information, please see the <code><a [routerLink]="['/features/common']">DotsConfig</a></code>'s section</p>
             </div>
           </td>
         </tr>
@@ -163,7 +163,7 @@
           </td>
           <td>
             <div>
-              <i>Type: </i><code><a pageScroll href="#AccessibilityConfig">AccessibilityConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+              <i>Type: </i><code><a [routerLink]="['/features/accessibility']">AccessibilityConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
             </div>
             <div>
               <p>Interface to customize accessibility features, like alt, titles, aria-labels and so on. ModalGalleryComponent applies a default value with english texts.
@@ -214,9 +214,9 @@
           <td><small><code>close</code></small></td>
           <td>
             <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal view closes.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: <a pageScroll href="#ActionEnum">Action</a> that can be <code>NORMAL</code>, <code>KEYBOARD</code> or <code>CLICK</code></li>
+              <li>action: <code><a [routerLink]="['/features/common']">Action</a></code> that can be <code>NORMAL</code>, <code>KEYBOARD</code> or <code>CLICK</code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -225,10 +225,10 @@
           <td><small><code>show</code></small></td>
           <td>
             <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the modal image will be visible.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number).</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number).</p>
             <p>Everytime the current image changes, a new <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> will be emitted.</p>
             <ul>
-              <li>action: either <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code>, <code><a pageScroll href="#ActionEnum">Action.CLICK</a></code>, <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a pageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
               <li>result: <code>number</code> (index of an image. Not the index of the array, but incremented by 1)</li>
             </ul>
           </td>
@@ -238,9 +238,9 @@
           <td>
             <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the FIRST image in
               <code>modalImages</code> is visible.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: either <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code>, <code><a pageScroll href="#ActionEnum">Action.CLICK</a></code>, <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a pageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -250,9 +250,9 @@
           <td>
             <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>before</b> that the LAST image in
               <code>modalImages</code> is visible.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: either <code><a pageScroll href="#ActionEnum">Action.NORMAL</a></code>, <code><a pageScroll href="#ActionEnum">Action.CLICK</a></code>, <code><a pageScroll href="#ActionEnum">Action.KEYBOARD</a></code> or <code><a pageScroll href="#ActionEnum">Action.SWIPE</a></code></li>
+              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -261,10 +261,10 @@
           <td><small><code>hasData</code></small></td>
           <td>
             <p>An <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> right <b>after</b> the initialization of <code>modalImages</code>.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum and a result (boolean or number)</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number)</p>
             <p>This event is useful to know when angular-modal-gallery is ready.</p>
             <ul>
-              <li>action: <code><a pageScroll href="#ActionEnum">Action.LOAD</a></code></li>
+              <li>action: <code><a [routerLink]="['/features/common']">Action.LOAD</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -272,14 +272,14 @@
         <tr>
           <td><small><code>buttonBeforeHook</code></small></td>
           <td>
-            <p>A <code><a [routerLink]="['/features/upper-buttons']">>ButtonEvent</a></code> right <b>before</b> the action related to an upper button.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum, the current <code><a pageScroll href="#Image">Image</a></code> and the <code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code> that triggered this event</p>
+            <p>A <code><a [routerLink]="['/features/upper-buttons']">ButtonEvent</a></code> right <b>before</b> the action related to an upper button.</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum, the current <code><a [routerLink]="['/features/common']">Image</a></code> and the <code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code> that triggered this event</p>
             <p>This event is a 'before hook', because you can execute your code before every action triggered by buttons. Also, since you have the full
               <code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code> in the payload, you can run different code based on button's type</p>
             <ul>
-              <li>action: <code><a pageScroll href="#ActionEnum">Action.LOAD</a></code></li>
+              <li>action: <code><a [routerLink]="['/features/common']">Action.LOAD</a></code></li>
               <li>button: <code><code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code></code></li>
-              <li>image: <code><code><a pageScroll href="#Image">Image</a></code></code></li>
+              <li>image: <code><code><a [routerLink]="['/features/common']">Image</a></code></code></li>
             </ul>
           </td>
         </tr>
@@ -287,13 +287,13 @@
           <td><small><code>buttonAfterHook</code></small></td>
           <td>
             <p>A <code><a [routerLink]="['/features/upper-buttons']">ButtonEvent</a></code> right <b>after</b> the action related to an upper button.</p>
-            <p>It contains an <code><a pageScroll href="#ActionEnum">Action</a></code> enum, the current <code><a pageScroll href="#Image">Image</a></code> and the <code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code> that triggered this event</p>
+            <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum, the current <code><a [routerLink]="['/features/common']">Image</a></code> and the <code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code> that triggered this event</p>
             <p>This event is an 'after hook', because you can execute your code after every action triggered by buttons. Also, since you have the full
               <code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code> in the payload, you can run different code based on button's type</p>
             <ul>
-              <li>action: <code><a pageScroll href="#ActionEnum">Action.LOAD</a></code></li>
+              <li>action: <code><a [routerLink]="['/features/common']">Action.LOAD</a></code></li>
               <li>button: <code><code><a [routerLink]="['/features/upper-buttons']">ButtonConfig</a></code></code></li>
-              <li>image: <code><code><a pageScroll href="#Image">Image</a></code></code></li>
+              <li>image: <code><code><a [routerLink]="['/features/common']">Image</a></code></code></li>
             </ul>
           </td>
         </tr>
@@ -412,7 +412,7 @@
             <i>Type: </i><code>Action</code>
           </div>
           <div>
-            <p>It's the enum <code><a pageScroll href="#ActionEnum">Action</a></code></p>
+            <p>It's the enum <code><a [routerLink]="['/features/common']">Action</a></code></p>
           </div>
         </td>
       </tr>
@@ -475,7 +475,7 @@
         <td><small><code>description</code></small></td>
         <td class="big-tds">
           <div>
-            <i>Type: </i><code><a pageScroll href="#Description">Description</a></code> interface<span class="badge badge-pill badge-secondary float-right">optional</span>
+            <i>Type: </i><code><a [routerLink]="['/features/description']">Description</a></code> interface<span class="badge badge-pill badge-secondary float-right">optional</span>
           </div>
           <div>
             <p>Interface to specify a custom description either a full string or an object with string properties.
@@ -488,7 +488,7 @@
             <p>
               To customize part of the description, you can refer to this example: <small>`<code>imageText</code> <i>2</i> <code>numberSeparator</code> <i>12</i> <code>beforeTextDescription</code> <i>bla bla</i>`</small>.
               As you can see, "red" parts are customizable using the three properties described above. Furthermore, `<i>2</i>` is the index of the visible image, `<i>12</i>` the total number of images and `<i>bla bla</i>`
-              the description passed thanks to the input <a pageScroll href="#Image"><code>Image</code></a> object.
+              the description passed thanks to the input <code><a [routerLink]="['/features/common']">Image</a></code> object.
             </p>
             <p>Attention please! There aren't spaces between values. So if you want a 'text - text' you have to specify exactly ' - ', with the two spaces</p>
             <p>Also, from version 5.4.0, you can use this interface to change description's style.</p>
@@ -698,21 +698,6 @@
     <li><code>CUBE_FLIPPING</code>: flipping cube spinner</li>
     <li><code>CIRCLES</code>: spinner composed by multiple circles</li>
     <li><code>EXPLOSING_SQUARES</code>: spinner composed by 4 squares moving outside</li>
-  </ul>
-
-  <br>
-
-  <h2 id="ActionEnum" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/libs/angular-modal-gallery">ActionEnum</a>
-  </h2>
-  <p>Enum that represents the source of an action. It can be one of these enum values:</p>
-  <br>
-  <ul>
-    <li><code>NORMAL</code>: the default value</li>
-    <li><code>CLICK</code>: mouse click action</li>
-    <li><code>KEYBOARD</code>: keyboard action (<kbd>ctrl</kbd>+<kbd>s</kbd>, <kbd>cmd</kbd>+<kbd>s</kbd>, <kbd>esc</kbd>, <kbd>&rarr;</kbd>, <kbd>&larr;</kbd> and so on)</li>
-    <li><code>SWIPE</code>: swipe action</li>
-    <li><code>LOAD</code>: data/images loaded by the library</li>
   </ul>
 
   <br>

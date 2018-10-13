@@ -59,7 +59,7 @@ export class CarouselWithDescriptionComponent implements OnInit {
 
     this.codeHtml =
       `  <ks-carousel [id]="113" [images]="images"
-  [currentCarouselImageConfig]="{description: {strategy: 2}}"></ks-carousel>`;
+  [carouselImageConfig]="{description: {strategy: 2}}"></ks-carousel>`;
 
     this.codeTypescript =
       `  images: Image[]; // init this value with your images`;

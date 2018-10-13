@@ -104,9 +104,14 @@ nav.nav-expanded {
     }
   }
 
-  @media only screen and (max-width: 1395px) {
-    > #githubButtons {
+  > #githubButtons {
+    margin-right: 30px;
+    @media only screen and (max-width: 1260px) {
       display: none;
+    }
+
+    > .github-badge {
+      margin-left: 8px;
     }
   }
 }
