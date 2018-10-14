@@ -25,6 +25,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { environment } from '../../../../environments/environment';
+
+const PATH = environment.imgPath;
 
 @Component({
   selector: 'app-navbar',
@@ -33,6 +36,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class NavbarComponent {
   navbarHeight = '56px';
+  path: string = PATH + '/assets/amg.svg';
 
   collapsed = false;
 
