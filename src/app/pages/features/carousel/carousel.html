@@ -10,7 +10,9 @@
     Optionally, it can display previews above/below the main image. A live example of this component is available on the homepage of this website.
     Obviously, there are additional configurable features, like aria, keyboard navigation, sizes and so on.
     A very cool feature, it the integration with ModalGallery. In fact, you can configure the carousel to open the current image in a modal way,
-    using <code><a [routerLink]="['/features/modal-gallery']">ModalGalleryComponent</a></code>.
+    using <code><a [routerLink]="['/features/modal-gallery']">ModalGalleryComponent</a></code>.</p>
+  <p class="warning">If you need to support also Internet Explorer 11 (IE11), enable <code>legacyIE11Mode: true</code> and use only
+    ABSOLUTE image paths (for instance '/assets/a.png' instead of './assets/a.png'). However, try to understand that I cannot support that obsolete browser forever!</p>
   <br>
   <table class="table table-hover table-sm">
     <tbody>
@@ -54,6 +56,7 @@
                 image source paths with other additional configuration parameters. For more info check <code><a [routerLink]="['/features/common']">Image</a></code>.</p>
               <p>Please, don't use <code>this.images.push(img)</code> when you want to modify this array, instead re-assign it to trigger change detection.
               For instance: <code>this.images = [...this.images, newImage]</code> to create a new array from the original with a new image at the end.</p>
+              <p class="warning">If you need IE11 support, always use ABSOLUTE image paths (for instance '/assets/a.png' instead of './assets/a.png').</p>
             </div>
           </td>
         </tr>
@@ -289,7 +292,18 @@
           <i>Type: </i><code>boolean</code>
         </div>
         <div>
-          <p>boolean enable clicks on the current image to open modal gallery. false by default.</p>
+          <p>boolean to enable clicks on the current image to open modal gallery. false by default.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><small><code>legacyIE11Mode</code></small></td>
+      <td>
+        <div>
+          <i>Type: </i><code>boolean</code>
+        </div>
+        <div>
+          <p>boolean to enable legacy support for Internet Explorer 11 (IE11), otherwise the carousel won't work properly. false by default.</p>
         </div>
       </td>
     </tr>
