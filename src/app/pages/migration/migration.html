@@ -31,12 +31,17 @@
           and rxjs 6 (rxjs-compat is no more required by this library).</p>
 
         <br>
-        <h4>Step 3 - rename ModalGalleryModule into GalleryModule</h4>
+        <h4>Step 3 - install the new dependency @angular/cdk</h4>
+
+        <p>In your terminal run: <code>npm install --save @angular/cdk</code>, because it's required to support responsiveness of carousel component.</p>
+
+        <br>
+        <h4>Step 4 - rename ModalGalleryModule into GalleryModule</h4>
 
         <p>From version 7.x.x you must use <code>GalleryModule.forRoot()</code>, instead of <code>ModalGalleryModule.forRoot()</code> in your main app module</p>
 
         <br>
-        <h4>(optional) Step 4 - add the new properties to <code>accessibilityConfig</code> input</h4>
+        <h4>(optional) Step 5 - add the new properties to <code>accessibilityConfig</code> input</h4>
 
         <p>If you are using custom accessibility configurations, add these properties to the <code>accessibilityConfig</code> input:</p>
         <pre>
@@ -81,7 +86,7 @@
         <p>So, in your terminal run:</p>
         <ol>
           <li><code>npm uninstall angular-modal-gallery</code></li>
-          <li><code>npm install --save @ks89/angular-modal-gallery</code></li>
+          <li><code>npm install --save @ks89/angular-modal-gallery@6.3.0</code></li>
         </ol>
 
         <br>
