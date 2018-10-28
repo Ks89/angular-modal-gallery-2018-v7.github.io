@@ -24,7 +24,7 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { environment } from '../../../../environments/environment';
 
 const PATH = environment.imgPath;
