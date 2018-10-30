@@ -41,7 +41,7 @@ export class CommonComponent implements OnInit {
               private titleService: TitleService,
               private scrollService: PageScrollService,
               @Inject(DOCUMENT) private document: any) {
-    this.titleService.titleEvent.emit('Features - Common Interfaces and classes');
+    this.titleService.titleEvent.emit('Features - Common');
 
     // scroll to the top of the document
     const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, 'div#features');
