@@ -42,6 +42,7 @@ import { CarouselCustomAutoplayComponent } from './carousel-custom-autoplay/caro
 import { CarouselCustomPreviewsComponent } from './carousel-custom-previews/carousel-custom-previews.component';
 import { CarouselWithDescriptionComponent } from './carousel-with-description/carousel-with-description.component';
 import { CarouselOutputsComponent } from './carousel-outputs/carousel-outputs.component';
+import { CarouselBreakpointsComponent } from './carousel-breakpoints/carousel-breakpoints.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -86,5 +87,6 @@ export const FEATURES_COMPONENTS = [
   CarouselCustomAutoplayComponent,
   CarouselCustomPreviewsComponent,
   CarouselWithDescriptionComponent,
-  CarouselOutputsComponent
+  CarouselOutputsComponent,
+  CarouselBreakpointsComponent
 ];
