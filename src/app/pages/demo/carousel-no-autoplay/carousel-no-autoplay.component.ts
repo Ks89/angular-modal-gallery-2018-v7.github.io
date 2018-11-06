@@ -58,7 +58,7 @@ export class CarouselNoAutoplayComponent implements OnInit {
     this.titleService.titleEvent.emit('Examples - Carousel no autoplay');
 
     this.codeHtml =
-      `  <ks-carousel [id]="105" [images]="images" [playConfig]="{autoPlay: false}"></ks-carousel>`;
+      `  <ks-carousel [id]="105" [images]="images" [playConfig]="{autoPlay: false, interval: 5000, pauseOnHover: true}"></ks-carousel>`;
 
     this.codeTypescript =
       `  images: Image[]; // init this value with your images`;

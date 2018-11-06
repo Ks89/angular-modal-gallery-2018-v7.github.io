@@ -68,7 +68,7 @@ export class CarouselBreakpointsComponent implements OnInit {
 
     this.codeHtml2 =
       `  <ks-carousel [id]="116" [images]="images"
-    [carouselConfig]="{maxWidth: '500px'}"
+    [carouselConfig]="{maxWidth: '500px', maxHeight: '400px', showArrows: true, objectFit: 'cover', keyboardEnable: true, modalGalleryEnable: false, legacyIE11Mode: false}"
     [previewConfig]="{visible: true, breakpoints: {xSmall: 50, small: 60, medium: 70, large: 80, xLarge: 100}}"></ks-carousel>`;
 
     this.codeTypescript2 =
