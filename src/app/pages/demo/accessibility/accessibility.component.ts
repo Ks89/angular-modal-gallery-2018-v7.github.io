@@ -84,9 +84,6 @@ export class AccessibilityComponent implements OnInit {
     carouselPrevImageTitle: 'Previous image',
     carouselNextImageAriaLabel: 'Next image',
     carouselNextImageTitle: 'Next image',
-    carouselDotsContainerAriaLabel: 'Image navigation dots',
-    carouselDotsContainerTitle: '',
-    carouselDotAriaLabel: 'Show image number',
     carouselPreviewsContainerAriaLabel: 'Image previews',
     carouselPreviewsContainerTitle: '',
     carouselPreviewScrollPrevAriaLabel: 'Scroll previous previews',
@@ -142,7 +139,20 @@ export class AccessibilityComponent implements OnInit {
     previewScrollPrevAriaLabel: 'CUSTOM Scroll previous previews',
     previewScrollPrevTitle: 'CUSTOM Scroll previous previews',
     previewScrollNextAriaLabel: 'CUSTOM Scroll next previews',
-    previewScrollNextTitle: 'CUSTOM Scroll next previews'
+    previewScrollNextTitle: 'CUSTOM Scroll next previews',
+    
+    carouselContainerAriaLabel: 'Current image and navigation',
+    carouselContainerTitle: '',
+    carouselPrevImageAriaLabel: 'Previous image',
+    carouselPrevImageTitle: 'Previous image',
+    carouselNextImageAriaLabel: 'Next image',
+    carouselNextImageTitle: 'Next image',
+    carouselPreviewsContainerAriaLabel: 'Image previews',
+    carouselPreviewsContainerTitle: '',
+    carouselPreviewScrollPrevAriaLabel: 'Scroll previous previews',
+    carouselPreviewScrollPrevTitle: 'Scroll previous previews',
+    carouselPreviewScrollNextAriaLabel: 'Scroll next previews',
+    carouselPreviewScrollNextTitle: 'Scroll next previews'
   };`;
   }
 

@@ -54,6 +54,7 @@
               <p> The mandatory array of <code><a [routerLink]="['/features/common']">Image</a></code> objects, that represent both the thumb gallery and the
                 modal images. In fact, an <code><a [routerLink]="['/features/common']">Image</a></code> is an object with both thumb and
                 image source paths with other additional configuration parameters. For more info check <code><a [routerLink]="['/features/common']">Image</a></code>.</p>
+              <p class="warning">Carousel uses the image path assigned to the modal property in Image class. This is for historical reason and to provide a better integration with modal-gallery.</p>
               <p>Please, don't use <code>this.images.push(img)</code> when you want to modify this array, instead re-assign it to trigger change detection.
               For instance: <code>this.images = [...this.images, newImage]</code> to create a new array from the original with a new image at the end.</p>
               <p class="warning">If you need IE11 support, always use ABSOLUTE image paths (for instance '/assets/a.png' instead of './assets/a.png').</p>
