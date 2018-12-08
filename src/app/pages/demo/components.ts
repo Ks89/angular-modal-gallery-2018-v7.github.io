@@ -43,6 +43,7 @@ import { CarouselCustomPreviewsComponent } from './carousel-custom-previews/caro
 import { CarouselWithDescriptionComponent } from './carousel-with-description/carousel-with-description.component';
 import { CarouselOutputsComponent } from './carousel-outputs/carousel-outputs.component';
 import { CarouselBreakpointsComponent } from './carousel-breakpoints/carousel-breakpoints.component';
+import { SameImagesComponent } from './same-images/same-images.component';
 
 export const FEATURES_COMPONENTS = [
   DemoComponent,
@@ -78,6 +79,7 @@ export const FEATURES_COMPONENTS = [
   Base64Component,
   DownloadCustomFilenameComponent,
   InvertSwipeComponent,
+  SameImagesComponent,
   CarouselMinimalComponent,
   CarouselFixedComponent,
   CarouselContentProjectionComponent,

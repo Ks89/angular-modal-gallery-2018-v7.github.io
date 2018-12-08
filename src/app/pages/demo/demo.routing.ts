@@ -43,6 +43,7 @@ import { CarouselCustomPreviewsComponent } from './carousel-custom-previews/caro
 import { CarouselWithDescriptionComponent } from './carousel-with-description/carousel-with-description.component';
 import { CarouselOutputsComponent } from './carousel-outputs/carousel-outputs.component';
 import { CarouselBreakpointsComponent } from './carousel-breakpoints/carousel-breakpoints.component';
+import { SameImagesComponent } from './same-images/same-images.component';
 
 export const routes: Routes = [
   {
@@ -91,6 +92,7 @@ export const routes: Routes = [
       {path: 'gallery-service', component: GalleryServiceComponent},
       {path: 'base64', component: Base64Component},
       {path: 'invert-swipe', component: InvertSwipeComponent},
+      {path: 'same-images', component: SameImagesComponent},
 
       {path: 'carousel', component: CarouselMinimalComponent},
       {path: 'carousel-fixed', component: CarouselFixedComponent},

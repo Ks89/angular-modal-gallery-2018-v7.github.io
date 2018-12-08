@@ -82,3 +82,18 @@ export const IMAGES_RECT_ARRAY: Image[] = [
   new Image(6, {img: `${PATH}/assets/images/carousel/pexels-photo-96947.jpeg`},
     {img: `${PATH}/assets/images/carousel/thumbs/t-pexels-photo-96947.jpg`})
 ];
+
+export const SAME_IMAGES: Image[] = [
+  new Image(0, {
+    img: `${PATH}/assets/images/gallery/img1.jpg?0`,
+    extUrl: `http://www.google.com`
+  }),
+  new Image(1, {
+    img: `${PATH}/assets/images/gallery/img1.jpg?1`,
+    extUrl: `http://www.google.com`
+  }),
+  new Image(2, {
+    img: `${PATH}/assets/images/gallery/img1.jpg?2`,
+    extUrl: `http://www.google.com`
+  })
+];
