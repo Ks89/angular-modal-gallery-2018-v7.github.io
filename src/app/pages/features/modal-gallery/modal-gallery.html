@@ -12,8 +12,6 @@
     CurrentImageComponent, LoadingSpinnerComponent, DotsComponent and <code><a [routerLink]="['/features/previews']">PreviewsComponent</a></code>.</p>
   <p>All these components together provide navigation between images with both mouse and keyboard, it
     can enable/disable download features and other advanced behaviours.</p>
-  <p><b>This is the only public component, so evey input must be provided to it.</b> However, many of the inputs are managed by inner components, so I decided to
-    split this documentation to highlight meaningful features in a better way.</p>
   <br>
   <table class="table table-hover table-sm">
     <tbody>
@@ -55,6 +53,10 @@
               image source paths with other additional configuration parameters. For more info check <code><a [routerLink]="['/features/common']">Image</a></code>.
               Please don't use <code>this.images.push(img)</code>, when you want to modify this array, instead re-assign it to trigger change detection.
               For instance: <code>this.images = [...this.images, newImage]</code> to create a new array from the original with a new image at the end.
+            </div>
+            <div>
+              Attention: if you need to add the same image (same url) multiple times in the same modal gallery, you must append to the url a random but unique query param to prevent caching issues.
+              For more info, please read <a href="https://github.com/Ks89/angular-modal-gallery/issues/171">this issue</a>.
             </div>
           </td>
         </tr>
@@ -150,8 +152,8 @@
               <i>Type: </i><code><a pageScroll href="#SlideConfig">SlideConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
             </div>
             <div>
-              <p>Interface to enable infinite-sliding (you won't be able to navigate before both the first and after the last images) and to configure side-previews.
-                By default, infinite sliding is disabled, and side-previews are visible with <code>width: 100px</code> and <code>height: auto</code>.</p>
+              <p>Interface to enable infinite-sliding (you won't be able to navigate before both the first and after the last images) and to configure both side-previews and autoPlay.
+                By default, infinite sliding is disabled, side-previews are visible with <code>width: 100px</code> and <code>height: auto</code> and autoPlay is disabled.</p>
             </div>
           </td>
         </tr>
@@ -228,7 +230,7 @@
             <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number).</p>
             <p>Everytime the current image changes, a new <code><a pageScroll href="#ImageModalEvent">ImageModalEvent</a></code> will be emitted.</p>
             <ul>
-              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
+              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code>, <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code>, <code><a [routerLink]="['/features/common']">Action.AUTOPLAY</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
               <li>result: <code>number</code> (index of an image. Not the index of the array, but incremented by 1)</li>
             </ul>
           </td>
@@ -240,7 +242,7 @@
               <code>modalImages</code> is visible.</p>
             <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
+              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code>, <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code>, <code><a [routerLink]="['/features/common']">Action.AUTOPLAY</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -252,7 +254,7 @@
               <code>modalImages</code> is visible.</p>
             <p>It contains an <code><a [routerLink]="['/features/common']">Action</a></code> enum and a result (boolean or number)</p>
             <ul>
-              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
+              <li>action: either <code><a [routerLink]="['/features/common']">Action.NORMAL</a></code>, <code><a [routerLink]="['/features/common']">Action.CLICK</a></code>, <code><a [routerLink]="['/features/common']">Action.KEYBOARD</a></code>, <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code>, <code><a [routerLink]="['/features/common']">Action.AUTOPLAY</a></code> or <code><a [routerLink]="['/features/common']">Action.SWIPE</a></code></li>
               <li>result: <code>true</code></li>
             </ul>
           </td>
@@ -629,6 +631,17 @@
           </div>
           <div>
             <p>With this property, you can hide/show side-previews or change sizes.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><small><code>playConfig</code></small></td>
+        <td>
+          <div>
+            <i>Type: </i><code>PlayConfig</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+          </div>
+          <div>
+            <p>With this property, you can enable autoPlay, change default interval and enable pauseOnHover.</p>
           </div>
         </td>
       </tr>
