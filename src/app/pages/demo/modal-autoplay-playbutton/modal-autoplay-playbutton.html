@@ -1,14 +1,16 @@
 <div class="container">
+
   <h2 class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/projects/ks89/angular-modal-gallery/angular-modal-gallery">Plain gallery &lt;a&gt; tags</a>
+    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/projects/ks89/angular-modal-gallery/angular-modal-gallery">Autoplay with button example</a>
   </h2>
-  <p>Plain gallery in a row with &lt;a&gt; tags.</p>
+  <p>Modal gallery example with button to play/stop autoPlay. Also interval=2000 and pauseOnHover=false.</p>
   <br>
 
   <h3>Live Demo</h3>
   <br>
+  <p><button (click)="autoPlayButton(0)">{{isPlaying ? 'Pause' : 'Play'}}</button></p>
   <ks-modal-gallery [id]="0" [modalImages]="images"
-                    [plainGalleryConfig]="plainGalleryRowATags"></ks-modal-gallery>
+                    [slideConfig]="{playConfig: {autoPlay: true, interval: 2000, pauseOnHover: false}}"></ks-modal-gallery>
   <br><br>
 
   <section>
@@ -116,9 +118,9 @@
         <tr>
           <td><code>plainGalleryConfig</code></td>
           <td>
-            <div><i>Value: </i><code>&#123;strategy: PlainGalleryStrategy.ROW, layout: new LineLayout(&#123;width: '50px', height: '50px'&#125;, &#123;length: 4, wrap: true&#125;, 'flex-start'), advanced: &#123;aTags: true, additionalBackground: '50% 50%/cover'&#125;&#125;</code></div>
+            <div><i>Value: </i><code>undefined</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>Custom plain gallery with &lt;a&gt; tags</div>
+            <div>Row plain gallery with default layout</div>
           </td>
         </tr>
         <tr>
@@ -126,7 +128,7 @@
           <td>
             <div><i>Value: </i><code>undefined</code></div>
             <div><a [routerLink]="['/features/defaultValues']">default value</a></div>
-            <div>Infinite sliding and autoPlay are disabled and side previews are enabled with default sizes</div>
+            <div>Infinite sliding is disabled, side previews are enabled with default sizes and autoPlay is enabled with interval=2000 and playOnHover=false.</div>
           </td>
         </tr>
       </tbody>
