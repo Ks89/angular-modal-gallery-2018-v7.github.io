@@ -55,8 +55,8 @@
               For instance: <code>this.images = [...this.images, newImage]</code> to create a new array from the original with a new image at the end.
             </div>
             <div>
-              Attention: if you need to add the same image (same url) multiple times in the same modal gallery, you must append to the url a random but unique query param to prevent caching issues.
-              For more info, please read <a href="https://github.com/Ks89/angular-modal-gallery/issues/171">this issue</a>.
+              <b class="text-success">Attention: if you need to add the same image (same url) multiple times in the same modal gallery, you must append to the url a random but unique query param to prevent caching issues.
+                For more info, please read <a href="https://github.com/Ks89/angular-modal-gallery/issues/171">this issue</a>.</b>
             </div>
           </td>
         </tr>
@@ -638,7 +638,7 @@
         <td><small><code>playConfig</code></small></td>
         <td>
           <div>
-            <i>Type: </i><code>PlayConfig</code><span class="badge badge-pill badge-secondary float-right">optional</span>
+            <i>Type: </i><code><a [routerLink]="['/features/common']">PlayConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
           </div>
           <div>
             <p>With this property, you can enable autoPlay, change default interval and enable pauseOnHover.</p>

@@ -85,11 +85,11 @@
           </td>
           <td>
             <div>
-              <i>Type: </i><code><a pageScroll href="#PlayConfig">PlayConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
+              <i>Type: </i><code><a [routerLink]="['/features/common']">PlayConfig</a></code><span class="badge badge-pill badge-secondary float-right">optional</span>
             </div>
             <div>
               <p>Interface to change the behaviour of auto-navigation, like autoPlay and interval in milliseconds.</p>
-              <p>For more information, please see the <a pageScroll href="#PlayConfig">PlayConfig</a>'s section</p>
+              <p>For more information, please see the <a [routerLink]="['/features/common']">PlayConfig</a>'s section</p>
             </div>
           </td>
         </tr>
@@ -340,51 +340,6 @@
         </div>
         <div>
           <p>Optional boolean property to invert the default swipe direction on devices with touchscreen.</p>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-  <h2 id="PlayConfig" class="link clickable">
-    <a class="link-title" href="https://github.com/Ks89/angular-modal-gallery/tree/master/projects/ks89/angular-modal-gallery/angular-modal-gallery">PlayConfig</a>
-  </h2>
-  <p>Interface to change the behaviour of auto-navigation, like autoPlay and interval in milliseconds.</p>
-  <br>
-  <table class="table table-hover table-sm">
-    <tbody>
-    <tr>
-      <td><small><code>autoPlay</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>boolean</code>
-        </div>
-        <div>
-          <p>If false autoPlay is disabled. true by default.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><small><code>interval</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>number</code>
-        </div>
-        <div>
-          <p>Integer >= 0 that represents the amount of time in milliseconds between every image.
-            It's used only when autoPlay is enabled. 5000 by default.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td><small><code>pauseOnHover</code></small></td>
-      <td>
-        <div>
-          <i>Type: </i><code>boolean</code>
-        </div>
-        <div>
-          <p>If false, carousel won't stop moving the mouse pointer over it. true by default.</p>
         </div>
       </td>
     </tr>
